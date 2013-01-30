@@ -1,7 +1,13 @@
+
 """Basic Config"""
 set nocompatible
 set backup
 set backupdir=$HOME/.vimtemp
+
+"""Key Config"""
+"macvimではoption+¥がleaderになるので変更
+let g:mapleader = '¥'
+"map ¥ <leader>
 
 ""StatusLine""
 set laststatus=2
@@ -14,6 +20,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Shougo/git-vim'
+Bundle 'thinca/vim-quickrun'
 
 ""Scouter
 function! Scouter(file, ...)
@@ -25,5 +32,5 @@ function! Scouter(file, ...)
   return len(filter(lines,'v:val !~ pat'))
 endfunction
 command! -bar -bang -nargs=? -complete=file Scouter
-\        echo Scouter(empty(<q-args>) ? $MYVIMRC : expand(<q-args>), <bang>0)set nocompatible
+\        echo Scouter(empty(<q-args>) ? $MYVIMRC : expand(<q-args>), <bang>0)
 
