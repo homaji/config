@@ -1,0 +1,181 @@
+"####Settings####
+
+set runtimepath=~/vimperator
+
+"エディターのパスを設定
+set editor="%VIM%/gvim.exe -f\ --remote-tab-wait-silent"
+
+"GUIの設定
+"旧バージョンでの表記
+"set guioptions=mnr
+set toolbars=noaddons,nonavigation
+
+"タブの追加ボタンを非表示
+"style chrome://* .tabs-newtab-button { display: none;}
+
+set status=input,location,position
+
+"Beepについて
+set visualbell
+hi Bell display: none;
+
+"vimperatorrcの再読込"
+map <silent> <Leader>R :mapc<CR>:cmapc<CR>:imapc<CR>:source ~/_vimperatorrc<CR>
+
+"はてなブックマークプラグインを使う
+"http://wiki.github.com/hatena/hatena-bookmark-xul/vimperator
+javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.js', {__proto__: this});
+
+"Readabilityプラグインを使う
+"「,r」でReadabilityを発動
+"http://vimperator.g.hatena.ne.jp/snaka72/20100704/1278205709
+map ,r :js Readability.enableREADABILITY({target: {id: 'readability-statusbar-icon'}})<CR>
+
+
+"http://retlet.net/log/2008/06/awesomebar-bookmarklet.html
+
+set! browser.urlbar.filter.javascript=false
+set! browser.urlbar.maxRichResults=10
+
+"tabを押さなくても補完する
+"set wildoptions=auto
+"補完リストはサーチエンジンとロケーションバーの履歴
+"Hははてぶ。上で読み込んだあとに利用する。
+set complete=tslbS
+
+"hintでmigemoを利用する
+"http://unsigned.g.hatena.ne.jp/Trapezoid/20080616/1213624179
+"set hintmatching=custom
+
+"hintでcharhintを使用できるよう設定
+set hintchars="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+
+"起動時にCSSを読み込む。場所は~/vimperator/colors
+"http://d.hatena.ne.jp/teramako/20081031/p1
+
+"js <<EOM
+"(function(){
+"var colorDir = io.getRuntimeDirectories("colors")[0];
+"io.readDirectory(colorDir).forEach(function(file){
+"  if (/\.css$/i.test(file.path)) io.source(file.path, false);
+"});
+"})();
+"EOM
+
+"####Mappings####
+"Leaderの設定"
+let mapleader='\'
+
+"css削除
+map	!	:set invum<CR>
+
+"####move####
+noremap	j	5j
+noremap	k	5k
+noremap J	<C-d>
+noremap K	<C-u>
+
+"####ShortCut####
+"http://retlet.net/log/firefox/vimperator/
+"inoremap <C-a> <C-v><C-a>
+"inoremap <C-z> <C-v><C-z>
+"inoremap <C-x> <C-v><C-x>
+"inoremap <C-c> <C-v><C-c>
+""inoremap <C-v> <C-v><C-v>
+"cnoremap <C-a> <C-v><C-a>
+"cnoremap <C-z> <C-v><C-z>
+"cnoremap <C-x> <C-v><C-x>
+"cnoremap <C-c> <C-v><C-c>
+"cnoremap <C-v> <C-v><C-v>
+
+" Add Mapping <C-c> copy or stop loading
+"<C-c>で選択範囲のコピーと読み込みの中断
+"http://vimperator.g.hatena.ne.jp/teramako/20090629/1246288372
+
+javascript <<EOF
+mappings.addUserMap([modes.NORMAL,modes.VISUAL],['<C-c>'], 'Copy selected text or stop loading',
+  function(){
+    var sel = document.commandDispatcher.focusedWindow.getSelection().toString();
+    if (sel){
+      util.copyToClipboard(sel,true);
+    } else {
+      window.BrowserStop();
+      liberator.echomsg('Stopped loading !', 5);
+    }   
+  },{ rhs: 'Copy selected text or stop loading' }
+);
+EOF
+
+"2chのログをみみずんで開いてみる。
+"http://vimperator.g.hatena.ne.jp/saitamanodoruji/20090613/1244854256
+map <silent> <Leader>mz :js var u=content.location.href.replace(/http:\/\/(.*)\.2ch\.net\/test\/read\.cgi\/(.*)\/(\d{4})(\d{1})(\d{5})\/?[ln]?\d{0,4}[n-]{0,2}\d{0,4}n?/,"http://mimizun.com/log/2ch/$2/$1.2ch.net/$2/kako/$3/$3$4/$3$4$5.html");content.window.open(u)<CR> 
+map <silent> <Leader>mx :js var u=content.location.href.replace(/http:\/\/(.*)\.2ch\.net\/test\/read\.cgi\/(.*)\/(\d{10})\/?[ln]?\d{0,4}[n-]{0,2}\d{0,4}n?/,"http://mimizun.com/log/2ch/$2/$1.2ch.net/$2/dat/$3.html");content.window.open(u)<CR>
+
+
+" block referer
+autocmd LocationChange .* 	set! network.http.sendRefererHeader=2
+autocmd LocationChange reader\.livedoor\.com/reader 	set! network.http.sendRefererHeader=0
+autocmd LocationChange fastladder\.com/reader 		set! network.http.sendRefererHeader=1
+autocmd LocationChange localhost   			set! network.http.sendRefererHeader=0
+autocmd LocationChange 127\.0\.0\.1  			set! network.http.sendRefererHeader=0
+autocmd LocationChange www\.google\.co\.jp 		set! network.http.sendRefererHeader=0
+
+ 
+
+"####Plugin####
+
+"Ime_controller.js
+let g:ex_ime_mode = "inactive"
+let g:textarea_ime_mode = "inactive"
+
+"clock.js
+"http://d.hatena.ne.jp/janus_wel/20081128/1227849365
+"let clock_format='[%d %t]'
+
+"feedSomeKeys_3.js
+command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
+lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc
+lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc
+lazy fmaps -u='www\.google\.co\.jp/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gt gu u / ? J K
+lazy fmaps -u='www\.google\.com/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gt gu u / ? J K
+"feedSomeKeys_2.js 
+	"autocmd LocationChange .* :fmapc
+	"	"LivedooeReader用
+	"	"http://d.hatena.ne.jp/teramako/20081018/p1
+	"	autocmd LocationChange 'reader\.livedoor\.com/reader' :fmap! j k s a p o v c <Space> <S-Space> z b < >
+	"	"Gmail用
+	"	"http://retlet.net/log/2008/06/feedsomekeys-js.html
+	"	autocmd LocationChange ^https?://mail\\.google\\.com/(mail|a)/ :fmap! c / j k n p o u e x s r a # [ ] z ? gi gs gt gd ga gc
+	"	"GoogleReader用
+	"	autocmd LocationChange 'www\.google\.com/reader' :fmap! -vkey j k n p m s t v A r S N P X O gh ga gs gt gu u <Space> / ?
+	"	autocmd LocationChange 'www\.google\.com/reader' :fmap -vkey -event keydown i o
+
+"はてなブックマーク
+javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.js', {__proto__: this});
+
+"togller.js
+"http://d.hatena.ne.jp/teramako/20081130/p1
+js <<EOM
+liberator.globalVariables.toggler = {
+  side: ["sbclose", "sbar HBookmarkSidebar"]
+};
+EOM
+
+" ldrize_cooperation.js {{{2
+"noremap <Leader>q :toggleldrc<CR>
+"let g:ldrc_enable = "true"
+"let g:ldrc_captureMappings = "['j','k','p','o','?']"
+"let g:ldrc_intelligence_bind = "true"
+"let g:ldrc_hints = "true"
+"let g:ldrc_skip = "0.1"
+
+"ReadItLater"
+let g:readitlater_api_key = "33dpbF57Akr08h6afkgY22fq2ad1V097" 
+
+"AppendAnchor.js
+let g:auto_append_anchor = "true"
+
+"Next Link
+"AutoPagelizeっぽくせずに次のページへのリンクを探して読み込む
+"let g:nextlink_followlink = "true"
