@@ -41,12 +41,14 @@ runtime vimfiles/ftplugin/changelog.vim
 let spec_chglog_format = "%c homaji"
 au BufNewFile,BufRead *.changelog setf spec
 
-"for Vundle
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'Shougo/git-vim'
-Bundle 'thinca/vim-quickrun'
+""NeoBundle
+if has('vim_starting')
+	set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
+call neobundle#rc(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+filetype plugin indent on "Required!
 
 ""Scouter
 function! Scouter(file, ...)
