@@ -8,7 +8,7 @@ set backupdir=$HOME/.vimtemp
 set clipboard=unnamed,autoselect
 """Key Config"""
 "macvimではoption+¥がleaderになるので変更
-let g:mapleader = '¥'
+let g:mapleader = ','
 "map ¥ <leader>
 
 "CurrentDirectory"
