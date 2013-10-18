@@ -17,6 +17,14 @@ augroup BufferAu
 	autocmd!
 	autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
 
+"runtimepath
+if isdirectory($HOME . '.vim')
+  let $MY_VIMRUNTIME = $HOME.'.vim'
+elseif isdirectory($HOME . 'vimfiles')
+  let $MY_VIMRUNTIME = $HOME.'vimfiles'
+elseif isdirectory($VIM . 'vimfiles')
+  let $MY_VIMRUNTIME = $VIM.'vimfiles'
+endif
 ""StatusLine""
 set laststatus=2
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
