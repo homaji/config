@@ -31,6 +31,10 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [L
 
 """Plugin Configrations"""
 
+""Changelog""
+let g:changelog_username = "homaji"
+let g:changelog_timeformat = "%Y-%m-%d"
+runtime vimfiles/ftplugin/changelog.vim
 "for Vundle
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
