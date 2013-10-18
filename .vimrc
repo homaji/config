@@ -4,6 +4,8 @@ set nocompatible
 set backup
 set backupdir=$HOME/.vimtemp
 
+"Use Clipboard"
+set clipboard=unnamed,autoselect
 """Key Config"""
 "macvimではoption+¥がleaderになるので変更
 let g:mapleader = '¥'
