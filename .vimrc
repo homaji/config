@@ -47,6 +47,12 @@ let g:clever_f_smart_case = 1
 "migemoっぽい検索
 let g:clever_f_use_migemo = 1
 
+""Vim-Over""
+"Highlight subsutitute"
+let g:over_enable_cmd_window = 1
+
+
+
 ""NeoBundle
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim
@@ -56,6 +62,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'rhysd/clever-f.vim'
+NeoBundle 'osyo-manga/vim-over'
 
 filetype plugin indent on "Required!
 
