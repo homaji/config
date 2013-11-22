@@ -54,6 +54,7 @@ endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'rhysd/clever-f.vim'
 
 filetype plugin indent on "Required!
