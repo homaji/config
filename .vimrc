@@ -41,12 +41,19 @@ runtime vimfiles/ftplugin/changelog.vim
 let spec_chglog_format = "%c homaji"
 au BufNewFile,BufRead *.changelog setf spec
 
+""Clever-f"
+"大文字を入力したときだけ、大文字小文字を区別
+let g:clever_f_smart_case = 1
+"migemoっぽい検索
+let g:clever_f_use_migemo = 1
+
 ""NeoBundle
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'rhysd/clever-f.vim'
 
 filetype plugin indent on "Required!
 
