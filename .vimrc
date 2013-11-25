@@ -61,6 +61,8 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'osyo-manga/vim-over'
 
