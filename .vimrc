@@ -54,7 +54,7 @@ let g:over_enable_cmd_window = 1
 
 ""quickrun.vim""
 " 新しいウィンドウを下に開く
-set splitbwlow
+set splitbelow
 
 ""NeoBundle
 if has('vim_starting')
@@ -72,6 +72,7 @@ NeoBundle 'Shougo/vimproc', {
 	\}
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimfiler'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'osyo-manga/vim-over'
