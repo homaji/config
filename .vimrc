@@ -77,6 +77,7 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'deton/jasegment.vim'
 
 filetype plugin indent on "Required!
 
