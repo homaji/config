@@ -12,11 +12,8 @@ set clipboard=unnamed,autoselect
 let g:mapleader = ','
 "map ¥ <leader>
 
-"CurrentDirectory"
-"http://blog.blueblack.net/item_317
-augroup BufferAu
-	autocmd!
-	autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
+""AutoChangeDirectory
+au BufEnter * execute 'lcd ' fnameescape(expand('%:p:h'))
 
 "runtimepath
 if isdirectory($HOME . '.vim')
