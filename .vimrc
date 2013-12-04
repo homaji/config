@@ -7,13 +7,21 @@ set directory=$HOME/.vimtemp
 
 "Use Clipboard"
 set clipboard=unnamed,autoselect
+
+""AutoChangeDirectory
+au BufEnter * execute 'lcd ' fnameescape(expand('%:p:h'))
+
+
 """Key Config"""
 "macvimではoption+¥がleaderになるので変更
 let g:mapleader = ','
 "map ¥ <leader>
 
-""AutoChangeDirectory
-au BufEnter * execute 'lcd ' fnameescape(expand('%:p:h'))
+""Edit .vimrc""
+"http://whileimautomaton.net/2008/08/vimworkshop3-kana-presentation
+nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
+""Reload .vimrc""
+nnoremap <Space>s. :<C-u>source $MYVIMRC<CR>
 
 "runtimepath
 if isdirectory($HOME . '.vim')
