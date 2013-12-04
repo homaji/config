@@ -52,7 +52,9 @@ let g:clever_f_use_migemo = 1
 "Highlight subsutitute"
 let g:over_enable_cmd_window = 1
 
-
+""quickrun.vim""
+" 新しいウィンドウを下に開く
+set splitbwlow
 
 ""NeoBundle
 if has('vim_starting')
