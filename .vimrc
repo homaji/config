@@ -3,6 +3,7 @@
 set nocompatible
 set backup
 set backupdir=$HOME/.vimtemp
+set directory=$HOME/.vimtemp
 
 "Use Clipboard"
 set clipboard=unnamed,autoselect
@@ -59,7 +60,14 @@ if has('vim_starting')
 endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {
+	\'build' : {
+	\	'mac' : 'make -f make_mac.mak',
+	\	'windows' : 'make -f make_mingw32.mak',
+	\	'cygwin' : 'make -f make_cygwin.mak',
+	\	'unix' : 'make -f make_unix.mak'
+	\	},
+	\}
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'thinca/vim-quickrun'
