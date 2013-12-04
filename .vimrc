@@ -65,6 +65,9 @@ set splitbelow
 "set default explor open in :e .
 let g:vimfiler_as_default_explorer = 1
 
+""smartchr""
+inoremap <expr> = smartchr#loop(' = ', ' == ')
+
 ""NeoBundle
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim
@@ -86,6 +89,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'deton/jasegment.vim'
+NeoBundle 'smartchr'
 
 filetype plugin indent on "Required!
 
