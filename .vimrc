@@ -56,6 +56,10 @@ let g:over_enable_cmd_window = 1
 " 新しいウィンドウを下に開く
 set splitbelow
 
+""vimfiler""
+"set default explor open in :e .
+let g:vimfiler_as_default_explorer = 1
+
 ""NeoBundle
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim
