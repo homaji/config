@@ -32,8 +32,8 @@ elseif isdirectory($VIM . 'vimfiles')
   let $MY_VIMRUNTIME = $VIM.'vimfiles'
 endif
 ""StatusLine""
-set laststatus=2
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+""set laststatus=2
+""set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 """Plugin Configrations"""
 
@@ -68,6 +68,10 @@ let g:vimfiler_as_default_explorer = 1
 ""smartchr""
 inoremap <expr> = smartchr#loop(' = ', ' == ')
 
+""lightline""
+let g:lightline = { 'colorscheme': 'wombat'}
+	
+
 ""NeoBundle
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim
@@ -89,6 +93,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'deton/jasegment.vim'
+NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'smartchr'
 
 filetype plugin indent on "Required!
