@@ -73,11 +73,12 @@ let g:lightline = {
 		\'colorscheme': 'wombat'
 		\,
 		\'active': {
-		\  'left':[ ['mode', 'paste'], ['readonly', 'filename','modified'] ],
-		\  'right':[ ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'] ]
+		\  'left':[ ['mode', 'paste'], ['readonly','modified'],['filename'] ],
+		\  'right':[ ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'] ],
 		\},
 		\'component_function': {
-		\    'mode': 'Mymode'
+		\    'mode': 'Mymode',
+		\    'filename': 'MyFilename'
 		\ }
 		\}
 function! Mymode()
@@ -86,8 +87,9 @@ function! Mymode()
 	      \ &ft == 'vimshell' ? 'VimShell' :
 	      \ winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
-
-
+function! MyFilename()
+	return  '' ! = expand('%:F') ? expand('%:F) : '[No Name]'
+endfunction
 	
 
 ""NeoBundle
