@@ -69,7 +69,25 @@ let g:vimfiler_as_default_explorer = 1
 inoremap <expr> = smartchr#loop(' = ', ' == ')
 
 ""lightline""
-let g:lightline = { 'colorscheme': 'wombat'}
+let g:lightline = { 
+		\'colorscheme': 'wombat'
+		\,
+		\'active': {
+		\  'left':[ ['mode', 'paste'], ['readonly', 'filename','modified'] ],
+		\  'right':[ ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'] ]
+		\},
+		\'component_function': {
+		\    'mode': 'Mymode'
+		\ }
+		\}
+function! Mymode()
+	return  &ft == 'unite' ? 'Unite' :
+	      \ &ft == 'vimfiler' ? 'VimFiler' :
+	      \ &ft == 'vimshell' ? 'VimShell' :
+	      \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+
 	
 
 ""NeoBundle
