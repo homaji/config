@@ -121,7 +121,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'basyura/jslint.vim'
 NeoBundle 'JavaScript-Indent'
 NeoBundle 'smartchr'
-
+NeoBundle 'vim-scripts/project.tar.gz'
 filetype plugin indent on "Required!
 
 ""Scouter
