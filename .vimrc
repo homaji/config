@@ -99,6 +99,18 @@ set splitbelow
 "set default explor open in :e .
 let g:vimfiler_as_default_explorer = 1
 
+""Project.vim""
+".projectvimがそのフォルダにあれば自動で読み込み
+"Vimテクニックバイブルより
+if getcwd() != $HOME
+	if filereadable(getcwd(). '/.vimprojects')
+		Project .vimprojects
+	endif
+endif
+"Projectをトグルで開閉
+:nmap <silent> <Leader>p <Plug>ToggleProject
+
+
 ""smartchr""
 inoremap <expr> = smartchr#loop(' = ', ' == ')
 
