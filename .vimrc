@@ -1,10 +1,41 @@
+""NeoBundle
+set nocompatible
+filetype off
+
+if has('vim_starting')
+	set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
+call neobundle#rc(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc', {
+	\'build' : {
+	\	'mac' : 'make -f make_mac.mak',
+	\	'windows' : 'make -f make_mingw32.mak',
+	\	'cygwin' : 'make -f make_cygwin.mak',
+	\	'unix' : 'make -f make_unix.mak'
+	\	},
+	\}
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'rhysd/clever-f.vim'
+NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'deton/jasegment.vim'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'basyura/jslint.vim'
+NeoBundle 'JavaScript-Indent'
+NeoBundle 'smartchr'
+NeoBundle 'vim-scripts/spec.vim'
+NeoBundle 'vim-scripts/project.tar.gz'
+filetype plugin on 
+filetype indent on "Required!
+
 
 """Basic Config"""
-set nocompatible
 set backup
 set backupdir=$HOME/.vimtemp
 set directory=$HOME/.vimtemp
-
 "Use Clipboard"
 set clipboard=unnamed,autoselect
 
@@ -96,33 +127,6 @@ function! MyFilename()
 endfunction
 	
 
-""NeoBundle
-if has('vim_starting')
-	set runtimepath+=~/.vim/bundle/neobundle.vim
-endif
-call neobundle#rc(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc', {
-	\'build' : {
-	\	'mac' : 'make -f make_mac.mak',
-	\	'windows' : 'make -f make_mingw32.mak',
-	\	'cygwin' : 'make -f make_cygwin.mak',
-	\	'unix' : 'make -f make_unix.mak'
-	\	},
-	\}
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'rhysd/clever-f.vim'
-NeoBundle 'osyo-manga/vim-over'
-NeoBundle 'deton/jasegment.vim'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'basyura/jslint.vim'
-NeoBundle 'JavaScript-Indent'
-NeoBundle 'smartchr'
-NeoBundle 'vim-scripts/project.tar.gz'
-filetype plugin indent on "Required!
 
 ""Scouter
 function! Scouter(file, ...)
