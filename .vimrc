@@ -13,9 +13,9 @@ au BufEnter * execute 'lcd ' fnameescape(expand('%:p:h'))
 
 
 """Key Config"""
-"macvimではoption+¥がleaderになるので変更
+"macvimではoption+\がleaderになるので変更
 let g:mapleader = ','
-"map ¥ <leader>
+"map \ <leader>
 
 ""Edit .vimrc""
 "http://whileimautomaton.net/2008/08/vimworkshop3-kana-presentation
@@ -35,6 +35,9 @@ endif
 ""set laststatus=2
 ""set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
+""Encoding""
+scriptencoding utf-8
+set encoding=utf-8
 """Plugin Configrations"""
 
 ""Changelog""
@@ -78,8 +81,9 @@ let g:lightline = {
 		\},
 		\'component_function': {
 		\    'mode': 'Mymode',
-		\    'filename': 'MyFilename'
-		\ }
+		\ },
+ 		\ 'separator': { 'left': "\u2b80", 'right': "\u2b82" }, 
+		\ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }
 		\}
 function! Mymode()
 	return  &ft == 'unite' ? 'Unite' :
@@ -88,7 +92,7 @@ function! Mymode()
 	      \ winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 function! MyFilename()
-	return  '' ! = expand('%:F') ? expand('%:F) : '[No Name]'
+	return  ' ' ! = expand('%:F') ? expand('%:F') : '[No Name]'
 endfunction
 	
 
@@ -114,6 +118,8 @@ NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'deton/jasegment.vim'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'basyura/jslint.vim'
+NeoBundle 'JavaScript-Indent'
 NeoBundle 'smartchr'
 
 filetype plugin indent on "Required!
