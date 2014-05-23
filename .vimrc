@@ -24,6 +24,7 @@ NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'deton/jasegment.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'basyura/jslint.vim'
+NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'JavaScript-Indent'
 NeoBundle 'smartchr'
 NeoBundle 'vim-scripts/spec.vim'
@@ -39,9 +40,22 @@ set directory=$HOME/.vimtemp
 "Use Clipboard"
 set clipboard=unnamed,autoselect
 
+""Japanese enviroment""
+"http://magicant.txt-nifty.com/main/2009/03/vim-modeline-fi.html
+set fileencodings=ucs-bom,utf-8,iso-2022-jp,sjis,cp932,euc-jp,cp20932
+
 ""AutoChangeDirectory
 au BufEnter * execute 'lcd ' fnameescape(expand('%:p:h'))
 
+""Using with Cygwin"
+" VIM faq-33.6
+" https://github.com/Shougo/shougo-s-github/blob/master/vim/rc/windows.rc.vim
+set shellcmdflag=-c
+set shellxquote=\"
+set shell=bash.exe
+set shellpipe=2>&1\|\ tee
+set shellredir=>%s\ 2>&1
+set grepprg=grep
 
 """Key Config"""
 "macvimではoption+\がleaderになるので変更
@@ -97,13 +111,15 @@ set encoding=utf-8
 ""Changelog""
 let g:changelog_username = "homaji"
 let g:changelog_timeformat = "%Y-%m-%d"
+"au BufNewFile,BufRead *.changelog setf changelog 
 runtime vimfiles/ftplugin/changelog.vim
 
 
 ""Spec""
 "http://nanasi.jp/articles/vim/spec_vim.html
 let spec_chglog_format = "%c homaji"
-au BufNewFile,BufRead *.changelog setf spec
+au BufNewFile,BufRead *.changelog setf spee
+noremap <Leader>c <Plug>SpecChangelog
 
 ""Clever-f"
 "大文字を入力したときだけ、大文字小文字を区別
@@ -136,7 +152,17 @@ endif
 
 
 ""smartchr""
-inoremap <expr> = smartchr#loop(' = ', ' == ')
+inoremap <expr> = smartchr#loop('=', ' = ', ' == ')
+
+""memolist""
+let g:memolist_path = "$HOME/data/doc/lifelog"
+let g:memolist_unite = 1
+let g:memolist_unite_source = "file_rec"
+let g:memolist_unite_option = "-start-insert"
+
+""Unite""
+let g:unite_split_rule = "botright"
+let g:unite_winheight= 20
 
 ""lightline""
 let g:lightline = { 
