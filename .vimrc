@@ -139,8 +139,12 @@ let g:over_enable_cmd_window = 1
 set splitbelow
 
 ""vimfiler""
+"auto
+autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit 
 "set default explor open in :e .
 let g:vimfiler_as_default_explorer = 1
+"set Safemode off
+let g:vimfiler_safe_mode_by_default=0
 
 ""Project.vim""
 ".projectvimがそのフォルダにあれば自動で読み込み
