@@ -45,6 +45,10 @@ set clipboard=unnamed,autoselect
 "http://magicant.txt-nifty.com/main/2009/03/vim-modeline-fi.html
 set fileencodings=ucs-bom,utf-8,iso-2022-jp,sjis,cp932,euc-jp,cp20932
 
+""Show Invisible Characters""
+set list
+set listchars=tab:^_,trail:_
+
 ""AutoChangeDirectory
 au BufEnter * execute 'lcd ' fnameescape(expand('%:p:h'))
 

@@ -2,56 +2,50 @@
 
 set runtimepath=~/vimperator
 
-"ƒGƒfƒBƒ^[‚ÌƒpƒX‚ğİ’è
+"ã‚¨ãƒ‡ã‚£ã‚¿ãƒ¼ã®ãƒ‘ã‚¹ã‚’è¨­å®š
 set editor="%VIM%/gvim.exe -f\ --remote-tab-wait-silent"
 
-"GUI‚Ìİ’è
-"‹Œƒo[ƒWƒ‡ƒ“‚Å‚Ì•\‹L
+"GUIã®è¨­å®š
+"æ—§ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã§ã®è¡¨è¨˜
 "set guioptions=mnr
 set toolbars=noaddons,nonavigation
 
-"ƒ^ƒu‚Ì’Ç‰Áƒ{ƒ^ƒ“‚ğ”ñ•\¦
+"ã‚¿ãƒ–ã®è¿½åŠ ãƒœã‚¿ãƒ³ã‚’éè¡¨ç¤º
 "style chrome://* .tabs-newtab-button { display: none;}
 
 set status=input,location,position
 
-"Beep‚É‚Â‚¢‚Ä
+"Beepã«ã¤ã„ã¦
 set visualbell
 hi Bell display: none;
 
-"vimperatorrc‚ÌÄ“Ç"
+"vimperatorrcã®å†èª­è¾¼"
 map <silent> <Leader>R :mapc<CR>:cmapc<CR>:imapc<CR>:source ~/_vimperatorrc<CR>
 
-"‚Í‚Ä‚ÈƒuƒbƒNƒ}[ƒNƒvƒ‰ƒOƒCƒ“‚ğg‚¤
+"ã¯ã¦ãªãƒ–ãƒƒã‚¯ãƒãƒ¼ã‚¯ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã‚’ä½¿ã†
 "http://wiki.github.com/hatena/hatena-bookmark-xul/vimperator
 javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.js', {__proto__: this});
-
-"Readabilityƒvƒ‰ƒOƒCƒ“‚ğg‚¤
-"u,rv‚ÅReadability‚ğ”­“®
-"http://vimperator.g.hatena.ne.jp/snaka72/20100704/1278205709
-map ,r :js Readability.enableREADABILITY({target: {id: 'readability-statusbar-icon'}})<CR>
-
 
 "http://retlet.net/log/2008/06/awesomebar-bookmarklet.html
 
 set! browser.urlbar.filter.javascript=false
 set! browser.urlbar.maxRichResults=10
 
-"tab‚ğ‰Ÿ‚³‚È‚­‚Ä‚à•âŠ®‚·‚é
+"tabã‚’æŠ¼ã•ãªãã¦ã‚‚è£œå®Œã™ã‚‹
 "set wildoptions=auto
-"•âŠ®ƒŠƒXƒg‚ÍƒT[ƒ`ƒGƒ“ƒWƒ“‚ÆƒƒP[ƒVƒ‡ƒ“ƒo[‚Ì—š—ğ
-"H‚Í‚Í‚Ä‚ÔBã‚Å“Ç‚İ‚ñ‚¾‚ ‚Æ‚É—˜—p‚·‚éB
+"è£œå®Œãƒªã‚¹ãƒˆã¯ã‚µãƒ¼ãƒã‚¨ãƒ³ã‚¸ãƒ³ã¨ãƒ­ã‚±ãƒ¼ã‚·ãƒ§ãƒ³ãƒãƒ¼ã®å±¥æ­´
+"Hã¯ã¯ã¦ã¶ã€‚ä¸Šã§èª­ã¿è¾¼ã‚“ã ã‚ã¨ã«åˆ©ç”¨ã™ã‚‹ã€‚
 set complete=tslbS
 
-"hint‚Åmigemo‚ğ—˜—p‚·‚é
+"hintã§migemoã‚’åˆ©ç”¨ã™ã‚‹
 "http://unsigned.g.hatena.ne.jp/Trapezoid/20080616/1213624179
 "set hintmatching=custom
 
-"hint‚Åcharhint‚ğg—p‚Å‚«‚é‚æ‚¤İ’è
+"hintã§charhintã‚’ä½¿ç”¨ã§ãã‚‹ã‚ˆã†è¨­å®š
 set hintchars="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
-"‹N“®‚ÉCSS‚ğ“Ç‚İ‚ŞBêŠ‚Í~/vimperator/colors
+"èµ·å‹•æ™‚ã«CSSã‚’èª­ã¿è¾¼ã‚€ã€‚å ´æ‰€ã¯~/vimperator/colors
 "http://d.hatena.ne.jp/teramako/20081031/p1
 
 "js <<EOM
@@ -64,10 +58,10 @@ set hintchars="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 "EOM
 
 "####Mappings####
-"Leader‚Ìİ’è"
+"Leaderã®è¨­å®š"
 let mapleader='\'
 
-"cssíœ
+"csså‰Šé™¤
 map	!	:set invum<CR>
 
 "####move####
@@ -76,21 +70,14 @@ noremap	k	5k
 noremap J	<C-d>
 noremap K	<C-u>
 
-"####ShortCut####
-"http://retlet.net/log/firefox/vimperator/
-"inoremap <C-a> <C-v><C-a>
-"inoremap <C-z> <C-v><C-z>
-"inoremap <C-x> <C-v><C-x>
-"inoremap <C-c> <C-v><C-c>
-""inoremap <C-v> <C-v><C-v>
-"cnoremap <C-a> <C-v><C-a>
-"cnoremap <C-z> <C-v><C-z>
-"cnoremap <C-x> <C-v><C-x>
-"cnoremap <C-c> <C-v><C-c>
-"cnoremap <C-v> <C-v><C-v>
+"####Tabs####
+nnoremap s <Nop>
+nnoremap sn gt
+nnoremap sp gT
+
 
 " Add Mapping <C-c> copy or stop loading
-"<C-c>‚Å‘I‘ğ”ÍˆÍ‚ÌƒRƒs[‚Æ“Ç‚İ‚İ‚Ì’†’f
+"<C-c>ã§é¸æŠç¯„å›²ã®ã‚³ãƒ”ãƒ¼ã¨èª­ã¿è¾¼ã¿ã®ä¸­æ–­
 "http://vimperator.g.hatena.ne.jp/teramako/20090629/1246288372
 
 javascript <<EOF
@@ -106,11 +93,6 @@ mappings.addUserMap([modes.NORMAL,modes.VISUAL],['<C-c>'], 'Copy selected text o
   },{ rhs: 'Copy selected text or stop loading' }
 );
 EOF
-
-"2ch‚ÌƒƒO‚ğ‚İ‚İ‚¸‚ñ‚ÅŠJ‚¢‚Ä‚İ‚éB
-"http://vimperator.g.hatena.ne.jp/saitamanodoruji/20090613/1244854256
-map <silent> <Leader>mz :js var u=content.location.href.replace(/http:\/\/(.*)\.2ch\.net\/test\/read\.cgi\/(.*)\/(\d{4})(\d{1})(\d{5})\/?[ln]?\d{0,4}[n-]{0,2}\d{0,4}n?/,"http://mimizun.com/log/2ch/$2/$1.2ch.net/$2/kako/$3/$3$4/$3$4$5.html");content.window.open(u)<CR> 
-map <silent> <Leader>mx :js var u=content.location.href.replace(/http:\/\/(.*)\.2ch\.net\/test\/read\.cgi\/(.*)\/(\d{10})\/?[ln]?\d{0,4}[n-]{0,2}\d{0,4}n?/,"http://mimizun.com/log/2ch/$2/$1.2ch.net/$2/dat/$3.html");content.window.open(u)<CR>
 
 
 " block referer
@@ -139,19 +121,9 @@ lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs g
 lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc
 lazy fmaps -u='www\.google\.co\.jp/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gt gu u / ? J K
 lazy fmaps -u='www\.google\.com/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gt gu u / ? J K
-"feedSomeKeys_2.js 
-	"autocmd LocationChange .* :fmapc
-	"	"LivedooeReader—p
-	"	"http://d.hatena.ne.jp/teramako/20081018/p1
-	"	autocmd LocationChange 'reader\.livedoor\.com/reader' :fmap! j k s a p o v c <Space> <S-Space> z b < >
-	"	"Gmail—p
-	"	"http://retlet.net/log/2008/06/feedsomekeys-js.html
-	"	autocmd LocationChange ^https?://mail\\.google\\.com/(mail|a)/ :fmap! c / j k n p o u e x s r a # [ ] z ? gi gs gt gd ga gc
-	"	"GoogleReader—p
-	"	autocmd LocationChange 'www\.google\.com/reader' :fmap! -vkey j k n p m s t v A r S N P X O gh ga gs gt gu u <Space> / ?
-	"	autocmd LocationChange 'www\.google\.com/reader' :fmap -vkey -event keydown i o
 
-"‚Í‚Ä‚ÈƒuƒbƒNƒ}[ƒN
+
+"ã¯ã¦ãªãƒ–ãƒƒã‚¯ãƒãƒ¼ã‚¯
 javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.js', {__proto__: this});
 
 "togller.js
@@ -162,20 +134,12 @@ liberator.globalVariables.toggler = {
 };
 EOM
 
-" ldrize_cooperation.js {{{2
-"noremap <Leader>q :toggleldrc<CR>
-"let g:ldrc_enable = "true"
-"let g:ldrc_captureMappings = "['j','k','p','o','?']"
-"let g:ldrc_intelligence_bind = "true"
-"let g:ldrc_hints = "true"
-"let g:ldrc_skip = "0.1"
-
-"ReadItLater"
-let g:readitlater_api_key = "33dpbF57Akr08h6afkgY22fq2ad1V097" 
-
 "AppendAnchor.js
 let g:auto_append_anchor = "true"
 
 "Next Link
-"AutoPagelize‚Á‚Û‚­‚¹‚¸‚ÉŸ‚Ìƒy[ƒW‚Ö‚ÌƒŠƒ“ƒN‚ğ’T‚µ‚Ä“Ç‚İ‚Ş
+"AutoPagelizeã£ã½ãã›ãšã«æ¬¡ã®ãƒšãƒ¼ã‚¸ã¸ã®ãƒªãƒ³ã‚¯ã‚’æ¢ã—ã¦èª­ã¿è¾¼ã‚€
 "let g:nextlink_followlink = "true"
+set nextpattern=^æ¬¡(ã¸|ã®|ãƒš)?,^ç¶šã,ï¼®ï¼¥ï¼¸ï¼´,^éå»ã®?,(next|more),^(>>*|Â») 
+set previouspattern=^å‰(ã¸|ã®|ãƒš)?,^æˆ»ã‚‹,ï¼¢ï¼¡ï¼£ï¼«,^æœ€æ–°ã®?,(prev|previous),^(<<*|Â«) 
+let g:nextlink_nositeinfo_act = "e"
