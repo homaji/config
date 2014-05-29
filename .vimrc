@@ -25,6 +25,7 @@ NeoBundle 'deton/jasegment.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'basyura/jslint.vim'
 NeoBundle 'glidenote/memolist.vim'
+NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'JavaScript-Indent'
 NeoBundle 'smartchr'
 NeoBundle 'vim-scripts/spec.vim'
@@ -50,12 +51,14 @@ au BufEnter * execute 'lcd ' fnameescape(expand('%:p:h'))
 ""Using with Cygwin"
 " VIM faq-33.6
 " https://github.com/Shougo/shougo-s-github/blob/master/vim/rc/windows.rc.vim
-set shellcmdflag=-c
-set shellxquote=\"
-set shell=bash.exe
-set shellpipe=2>&1\|\ tee
-set shellredir=>%s\ 2>&1
-set grepprg=grep
+if has('win32') || has('win64')
+	set shellcmdflag=-c
+	set shellxquote=\"
+	set shell=bash.exe
+	set shellpipe=2>&1\|\ tee
+	set shellredir=>%s\ 2>&1
+	set grepprg=grep
+endif
 
 """Key Config"""
 "macvimではoption+\がleaderになるので変更
@@ -136,8 +139,12 @@ let g:over_enable_cmd_window = 1
 set splitbelow
 
 ""vimfiler""
+"auto
+autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit 
 "set default explor open in :e .
 let g:vimfiler_as_default_explorer = 1
+"set Safemode off
+let g:vimfiler_safe_mode_by_default=0
 
 ""Project.vim""
 ".projectvimがそのフォルダにあれば自動で読み込み
