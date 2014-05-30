@@ -41,14 +41,17 @@ set directory=$HOME/.vimtemp
 "Use Clipboard"
 set clipboard=unnamed,autoselect
 
+""Encoding""
+scriptencoding utf-8
+set encoding=utf-8
 ""Japanese enviroment""
 "http://magicant.txt-nifty.com/main/2009/03/vim-modeline-fi.html
 set fileencodings=ucs-bom,utf-8,iso-2022-jp,sjis,cp932,euc-jp,cp20932
 
 ""Show Invisible Characters""
 set list
-set listchars=tab:^_,trail:_
-
+set listchars=tab:▸\ ,trail:_
+	
 ""AutoChangeDirectory
 au BufEnter * execute 'lcd ' fnameescape(expand('%:p:h'))
 
@@ -110,9 +113,6 @@ endif
 ""set laststatus=2
 ""set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
-""Encoding""
-scriptencoding utf-8
-set encoding=utf-8
 """Plugin Configrations"""
 
 ""Changelog""
