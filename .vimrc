@@ -31,6 +31,7 @@ NeoBundle 'JavaScript-Indent'
 NeoBundle 'smartchr'
 NeoBundle 'vim-scripts/spec.vim'
 NeoBundle 'vim-scripts/project.tar.gz'
+NeoBundle 'itchyny/calendar.vim'
 filetype plugin on 
 filetype indent on "Required!
 
@@ -170,6 +171,9 @@ if getcwd() != $HOME
 endif
 "Projectをトグルで開閉
 :nmap <silent> <Leader>p <Plug>ToggleProject
+
+""Calendar.vim
+:nmap <silent> <Leader>c :<C-u>Calendar -view=year -split=vertical -width=27<CR>
 
 
 ""smartchr""
