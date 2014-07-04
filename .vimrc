@@ -16,6 +16,7 @@ NeoBundle 'Shougo/vimproc', {
 	\	},
 	\}
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'thinca/vim-quickrun'
@@ -97,6 +98,7 @@ nnoremap sv :<C-u>vs<CR>
 "s+bB use Unite buffers
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+nnoremap sf :<C-u>Unite file_mru<CR>
 "s+qQ kill buffer or window
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
