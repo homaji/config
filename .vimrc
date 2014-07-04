@@ -52,6 +52,12 @@ set fileencodings=ucs-bom,utf-8,iso-2022-jp,sjis,cp932,euc-jp,cp20932
 set list
 set listchars=tab:▸\ ,trail:_
 	
+""TabWidth
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set noexpandtab
+
 ""AutoChangeDirectory
 au BufEnter * execute 'lcd ' fnameescape(expand('%:p:h'))
 
