@@ -50,6 +50,8 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,iso-2022-jp,sjis,cp932,euc-jp,cp20932
 
 ""Show Invisible Characters""
+"http://qiita.com/X___MOON___X/items/26d3f292537bad197f64
+map <silent> <F3> :set list!<CR>
 set list
 set listchars=tab:▸\ ,trail:_
 	
