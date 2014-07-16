@@ -32,6 +32,9 @@ NeoBundle 'smartchr'
 NeoBundle 'vim-scripts/spec.vim'
 NeoBundle 'vim-scripts/project.tar.gz'
 NeoBundle 'itchyny/calendar.vim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/vimplenote-vim'
+
 filetype plugin on 
 filetype indent on "Required!
 
@@ -184,6 +187,7 @@ let g:memolist_path = "$HOME/data/doc/lifelog"
 let g:memolist_unite = 1
 let g:memolist_unite_source = "file_rec"
 let g:memolist_unite_option = "-start-insert"
+
 
 ""Unite""
 let g:unite_split_rule = "botright"
