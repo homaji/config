@@ -65,6 +65,9 @@ set display=lastline
 
 ""Set list height
 set pumheight=10
+""Set matching
+set showmatch
+set matchtime=1
 
 ""TabWidth
 set tabstop=4
