@@ -59,9 +59,12 @@ map <silent> <F3> :set list!<CR>
 set list
 set listchars=tab:▸\ ,trail:_
 
-""Shoe all lines
+""Show all lines
 "http://itchyny.hatenablog.com/entry/2014/12/25/090000
 set display=lastline
+
+""Set list height
+set pumheight=10
 
 ""TabWidth
 set tabstop=4
