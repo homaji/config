@@ -33,6 +33,7 @@ NeoBundle 'vim-scripts/project.tar.gz'
 NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/vimplenote-vim'
+NeoBundle 'haya14busa/incsearch.vim'
 
 filetype plugin on 
 filetype indent on "Required!
@@ -233,6 +234,10 @@ function! MyFilename()
 endfunction
 	
 
+""incSearch
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 ""Scouter
 function! Scouter(file, ...)
