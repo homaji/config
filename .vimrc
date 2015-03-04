@@ -109,6 +109,11 @@ nnoremap sf :<C-u>Unite file_mru<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 
+"Change yank key. Yank from cursol to line end.
+"http://itchyny.hatenablog.com/entry/2014/12/25/090000
+nnoremap Y y$
+
+
 ""Edit .vimrc""
 "http://whileimautomaton.net/2008/08/vimworkshop3-kana-presentation
 nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
