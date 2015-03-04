@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<root>
+	<item>
+	<list>
+		<item>
+			<name>Eisuu+hjkl to left/Down/Up/Right</name>
+			<identifier>option.vimode_eisuu_hjkl</identifier>
+			<autogen>--KeyOverlaidModifier-- KeyCode::JIS_EISUU, KeyCode::VK_MODIFIER_EXTRA1, KeyCode::JIS_EISUU</autogen>
+			<autogen>--KeyToKey-- KeyCode::H, ModifierFlag::EXTRA1, KeyCode::CURSOR_LEFT</autogen>
+			<autogen>--KeyToKey-- KeyCode::J, ModifierFlag::EXTRA1, KeyCode::CURSOR_DOWN</autogen>
+			<autogen>--KeyToKey-- KeyCode::K, ModifierFlag::EXTRA1, KeyCode::CURSOR_UP</autogen>
+			<autogen>--KeyToKey-- KeyCode::L, ModifierFlag::EXTRA1, KeyCode::CURSOR_RIGHT</autogen>
+			<autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::EXTRA1, KeyCode::SEMICOLON</autogen>
+			<autogen>--KeyToKey-- KeyCode::SEMICOLON, VK_SHIFT, KeyCode::SEMICOLON, ModifierFlag::SHIFT_L</autogen>
+		</item>
+
+		<item>
+			<name>KANA to Modifier</name>
+			<identifier>option.vimode_kana_hjkl</identifier>
+			<autogen>--KeyOverlaidModifier-- KeyCode::JIS_KANA, KeyCode::VK_MODIFIER_EXTRA2, KeyCode::JIS_KANA</autogen>
+			<autogen>--KeyToKey-- KeyCode::T, ModifierFlag::EXTRA2, KeyCode::TAB</autogen>
+			<autogen>--KeyToKey-- KeyCode::E, ModifierFlag::EXTRA2, KeyCode::ESCAPE</autogen>
+		</item>
+
+		<item>
+			<name>CTRL+J to KANA and CTRL+J</name>
+			<identifier>SKK.KANJInyuuryoku</identifier>
+			<autogen>--KeyToKey-- KeyCode::J, VK_CONTROL, KeyCode::JIS_KANA, KeyCode::J, VK_CONTROL</autogen>
+		</item>
+
+	</list>
+	</item>
+</root>
