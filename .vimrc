@@ -68,6 +68,9 @@ set noexpandtab
 ""AutoChangeDirectory
 au BufEnter * execute 'lcd ' fnameescape(expand('%:p:h'))
 
+""set Wildmode. Bash like complement
+set wildmode=list:longest
+
 ""Using with Cygwin"
 " VIM faq-33.6
 " https://github.com/Shougo/shougo-s-github/blob/master/vim/rc/windows.rc.vim
