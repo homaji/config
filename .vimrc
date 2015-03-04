@@ -21,7 +21,6 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rhysd/clever-f.vim'
-NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'deton/jasegment.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'basyura/jslint.vim'
@@ -165,10 +164,6 @@ noremap <Leader>c <Plug>SpecChangelog
 let g:clever_f_smart_case = 1
 "migemoっぽい検索
 let g:clever_f_use_migemo = 1
-
-""Vim-Over""
-"Highlight subsutitute"
-let g:over_enable_cmd_window = 1
 
 ""quickrun.vim""
 " 新しいウィンドウを下に開く
