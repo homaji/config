@@ -158,7 +158,7 @@ set splitbelow
 
 ""vimfiler""
 "auto
-autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit 
+"autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit 
 "set default explor open in :e .
 let g:vimfiler_as_default_explorer = 1
 "set Safemode off
