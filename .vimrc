@@ -58,7 +58,11 @@ set fileencodings=ucs-bom,utf-8,iso-2022-jp,sjis,cp932,euc-jp,cp20932
 map <silent> <F3> :set list!<CR>
 set list
 set listchars=tab:▸\ ,trail:_
-	
+
+""Shoe all lines
+"http://itchyny.hatenablog.com/entry/2014/12/25/090000
+set display=lastline
+
 ""TabWidth
 set tabstop=4
 set softtabstop=4
