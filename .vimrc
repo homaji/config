@@ -212,6 +212,8 @@ let g:memolist_unite_option = "-start-insert"
 ""Unite""
 let g:unite_split_rule = "botright"
 let g:unite_winheight= 20
+let g:unite_data_directory = "$HOME/.vim/cache/unite"
+let g:neomru#directory_mru_path = "$HOME/.vim/cache/neomru"
 
 ""lightline""
 let g:lightline = { 
