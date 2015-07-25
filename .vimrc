@@ -1,11 +1,11 @@
-""NeoBundle
-set nocompatible
-filetype off
+	""NeoBundle
+	set nocompatible
+	filetype off
 
-if has('vim_starting')
-	set runtimepath+=~/.vim/bundle/neobundle.vim
-endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+	if has('vim_starting')
+		set runtimepath+=~/.vim/bundle/neobundle.vim
+	endif
+	call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc', {
 	\'build' : {
@@ -19,6 +19,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/tabpagebuffer.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'deton/jasegment.vim'
@@ -34,6 +35,9 @@ NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/vimplenote-vim'
 NeoBundle 'haya14busa/incsearch.vim'
+NeoBundle 'open-browser.vim'
+
+call neobundle#end()
 
 filetype plugin on 
 filetype indent on "Required!
@@ -41,8 +45,8 @@ filetype indent on "Required!
 
 """Basic Config"""
 set backup
-set backupdir=$HOME/.vimtemp
-set directory=$HOME/.vimtemp
+set backupdir=$HOME/.vim/vimtemp
+set directory=$HOME/.vim/vimtemp
 "Use Clipboard"
 set clipboard=unnamed,autoselect
 
