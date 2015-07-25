@@ -47,6 +47,8 @@ filetype indent on "Required!
 set backup
 set backupdir=$HOME/.vim/vimtemp
 set directory=$HOME/.vim/vimtemp
+set viminfo+=n$HOME/.vim/viminfo.txt
+
 "Use Clipboard"
 set clipboard=unnamed,autoselect
 
