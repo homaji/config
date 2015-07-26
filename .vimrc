@@ -63,7 +63,7 @@ set fileencodings=ucs-bom,utf-8,iso-2022-jp,sjis,cp932,euc-jp,cp20932
 "http://qiita.com/X___MOON___X/items/26d3f292537bad197f64
 map <silent> <F3> :set list!<CR>
 set list
-set listchars=tab:▸\ ,trail:_
+set listchars=tab:>_,trail:_
 
 ""Show all lines
 "http://itchyny.hatenablog.com/entry/2014/12/25/090000
