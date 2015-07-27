@@ -81,6 +81,9 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 
+""Buffer
+set hidden
+
 ""AutoChangeDirectory
 au BufEnter * execute 'lcd ' fnameescape(expand('%:p:h'))
 
