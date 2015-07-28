@@ -69,6 +69,11 @@ set listchars=tab:>_,trail:_
 "http://itchyny.hatenablog.com/entry/2014/12/25/090000
 set display=lastline
 
+""Set Tab line
+"http://d.hatena.ne.jp/thinca/20111204/1322932585
+set showtabline=2
+set guioptions-=e
+
 ""Set list height
 set pumheight=10
 ""Set matching
