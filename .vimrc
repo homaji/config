@@ -240,6 +240,11 @@ let g:lightline = {
  		\ 'separator': { 'left': "\u2b80", 'right': "\u2b82" }, 
 		\ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }
 		\}
+
+let g:lightline.tabline = {'right':[['rows'],['cd'],['tabopts']]}
+let g:lightline.tab = {'active':['prefix','filename']}
+let g:lightline.tab.inactive = g:lightline.tab.active
+
 function! Mymode()
 	return  &ft == 'unite' ? 'Unite' :
 	      \ &ft == 'vimfiler' ? 'VimFiler' :
