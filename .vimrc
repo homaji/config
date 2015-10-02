@@ -140,6 +140,8 @@ nnoremap sQ :<C-u>bd<CR>
 "http://itchyny.hatenablog.com/entry/2014/12/25/090000
 nnoremap Y y$
 
+"ESC in insert-mode
+inoremap jk <ESC>
 
 ""Edit .vimrc""
 "http://whileimautomaton.net/2008/08/vimworkshop3-kana-presentation

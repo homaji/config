@@ -75,6 +75,18 @@ nnoremap s <Nop>
 nnoremap sn gt
 nnoremap sp gT
 
+"###for skk ###
+map <C-j> <Nop>
+cmap <C-j> <Nop>
+
+"### Showing Images###
+nnoremap x :set! permissions.default.image=2<cr>
+nnoremap X :set! permissions.default.image=1<cr>
+
+"### Toggle Javascript###
+" map  :set! javascript.enabled=false<CR>
+" map  :set! javascript.enabled=true<CR>
+
 
 " Add Mapping <C-c> copy or stop loading
 "<C-c>で選択範囲のコピーと読み込みの中断
