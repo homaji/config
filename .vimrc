@@ -186,6 +186,58 @@ let g:clever_f_use_migemo = 1
 " 新しいウィンドウを下に開く
 set splitbelow
 
+"
+"quickrun for sql
+let g:quickrun_config = {}
+let g:quickrun_config['sql'] = {
+		\ 'command': 'mysql',
+		\ 'exec': ['%c  %o < %s'],
+		\ 'cmdopt': '%{MakeMySQLCommandOptions()}'
+		\}
+
+let g:mysql_config_host = '10.211.55.6'
+let g:mysql_config_port = ''
+let g:mysql_config_user = 'root'
+function! MakeMySQLCommandOptions()
+	if !exists("g:mysql_config_host")
+		let g:mysql_config_host = input("host> ")
+	endif
+	if !exists("g:mysql_config_port")
+		let g:mysql_config_port = input("port> ")
+	endif
+	if !exists("g:mysql_config_user")
+		let g:mysql_config_user = input("user> ")
+	endif
+	if !exists("g:mysql_config_pass")
+		let g:mysql_config_pass = input("password> ")
+	endif
+	if !exists("g:mysql_config_db")
+		let g:mysql_config_db = input("database> ")
+	endif
+	
+	let optlist = []
+	if g:mysql_config_user != ''
+		call add(optlist, '-u ' . g:mysql_config_user)
+	endif
+	if g:mysql_config_host != ''
+		call add(optlist, '-h ' . g:mysql_config_host)
+	endif
+	if g:mysql_config_pass != ''
+		call add(optlist, '-p' . g:mysql_config_pass)
+	endif
+	if g:mysql_config_port != ''
+		call add(optlist, '-P ' . g:mysql_config_port)
+	endif
+	if exists("g:mysql_config_otheropts")
+		call add(optlist, g:mysql_config_otheropts)
+	endif
+
+    call add(optlist, g:mysql_config_db)
+    return join(optlist, ' ') 
+endfunction
+
+
+
 ""vimfiler""
 "auto
 "autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit 
@@ -240,7 +292,9 @@ let g:lightline = {
 		\    'mode': 'Mymode',
 		\ },
  		\ 'separator': { 'left': "\u2b80", 'right': "\u2b82" }, 
-		\ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }
+		\ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
+		\ 'tabline_separator': { 'left': "|", 'right': "|" }, 
+		\ 'tabline_subseparator': { 'left': "|" , 'right': "|" } 
 		\}
 
 let g:lightline.tabline = {'right':[['rows'],['cd'],['tabopts']]}
@@ -264,8 +318,8 @@ map ? <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 ""OpenBrowser
-nmap <Leader>o <Plug>(openbrowser-open)
-vmap <Leader>o <Plug>(openbrowser-open)
+"nmap <Leader>o <Plug>(openbrowser-open)
+"vmap <Leader>o <Plug>(openbrowser-open)
 
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 
