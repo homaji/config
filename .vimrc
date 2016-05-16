@@ -197,7 +197,7 @@ let g:quickrun_config['sql'] = {
 
 let g:mysql_config_host = '10.211.55.6'
 let g:mysql_config_port = ''
-let g:mysql_config_user = 'root'
+let g:mysql_config_user = 'homaji'
 function! MakeMySQLCommandOptions()
 	if !exists("g:mysql_config_host")
 		let g:mysql_config_host = input("host> ")
