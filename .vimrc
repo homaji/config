@@ -36,6 +36,7 @@ NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/vimplenote-vim'
 NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'open-browser.vim'
+NeoBundle 'superbrothers/vim-vimperator'
 
 call neobundle#end()
 
