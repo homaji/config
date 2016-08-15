@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'Shougo/vimproc',{'do' : 'make'}
 	Plug 'Shougo/neomru.vim'
 	Plug 'thinca/vim-quickrun'
+	Plug 'itchyny/lightline.vim'
 	Plug 'rhysd/clever-f.vim'
 call plug#end()
 
@@ -24,6 +25,7 @@ endif
 
 filetype plugin on 
 filetype indent on "Required!
+syntax on
 
 
 """Basic Config"""
