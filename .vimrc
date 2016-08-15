@@ -17,7 +17,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'rhysd/clever-f.vim'
 call plug#end()
 
-let g:vimproc#download_windows_dll 
+let g:vimproc#download_windows_dll =1
 
 filetype plugin on 
 filetype indent on "Required!
