@@ -11,13 +11,16 @@ endif
 call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/vim-plug',{'dir': '~/.vim/plugged/vim-plug/autoload'}
 	Plug 'Shougo/unite.vim'
-	Plug 'Shougo/vimproc'
+	Plug 'Shougo/vimproc',{'do' : 'make'}
 	Plug 'Shougo/neomru.vim'
 	Plug 'thinca/vim-quickrun'
 	Plug 'rhysd/clever-f.vim'
 call plug#end()
 
-let g:vimproc#download_windows_dll =1
+if has('win32')||('win64')
+	let g:vimproc#download_windows_dll =1
+endif
+
 
 filetype plugin on 
 filetype indent on "Required!
