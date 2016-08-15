@@ -1,44 +1,57 @@
-	""NeoBundle
-	set nocompatible
-	filetype off
+"	""NeoBundle
+"	set nocompatible
+"	filetype off
+"
+"	if has('vim_starting')
+"		set runtimepath+=~/.vim/bundle/neobundle.vim
+"	endif
+"	call neobundle#begin(expand('~/.vim/bundle/'))
+"NeoBundleFetch 'Shougo/neobundle.vim'
+"NeoBundle 'Shougo/vimproc', {
+"	\'build' : {
+"	\	'mac' : 'make -f make_mac.mak',
+"	\	'windows' : 'make -f make_mingw32.mak',
+"	\	'cygwin' : 'make -f make_cygwin.mak',
+"	\	'unix' : 'make -f make_unix.mak'
+"	\	},
+"	\}
+"NeoBundle 'Shougo/unite.vim'
+"NeoBundle 'Shougo/neomru.vim'
+"NeoBundle 'Shougo/vimshell'
+"NeoBundle 'Shougo/vimfiler'
+"NeoBundle 'Shougo/tabpagebuffer.vim'
+"NeoBundle 'thinca/vim-quickrun'
+"NeoBundle 'rhysd/clever-f.vim'
+"NeoBundle 'deton/jasegment.vim'
+"NeoBundle 'itchyny/lightline.vim'
+"NeoBundle 'basyura/jslint.vim'
+"NeoBundle 'glidenote/memolist.vim'
+"NeoBundle 'tpope/vim-fugitive'
+"NeoBundle 'JavaScript-Indent'
+"NeoBundle 'smartchr'
+"NeoBundle 'vim-scripts/spec.vim'
+"NeoBundle 'vim-scripts/project.tar.gz'
+"NeoBundle 'itchyny/calendar.vim'
+"NeoBundle 'mattn/webapi-vim'
+"NeoBundle 'mattn/vimplenote-vim'
+"NeoBundle 'haya14busa/incsearch.vim'
+"NeoBundle 'open-browser.vim'
+"NeoBundle 'superbrothers/vim-vimperator'
+"
+"call neobundle#end()
 
-	if has('vim_starting')
-		set runtimepath+=~/.vim/bundle/neobundle.vim
-	endif
-	call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc', {
-	\'build' : {
-	\	'mac' : 'make -f make_mac.mak',
-	\	'windows' : 'make -f make_mingw32.mak',
-	\	'cygwin' : 'make -f make_cygwin.mak',
-	\	'unix' : 'make -f make_unix.mak'
-	\	},
-	\}
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/tabpagebuffer.vim'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'rhysd/clever-f.vim'
-NeoBundle 'deton/jasegment.vim'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'basyura/jslint.vim'
-NeoBundle 'glidenote/memolist.vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'JavaScript-Indent'
-NeoBundle 'smartchr'
-NeoBundle 'vim-scripts/spec.vim'
-NeoBundle 'vim-scripts/project.tar.gz'
-NeoBundle 'itchyny/calendar.vim'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'mattn/vimplenote-vim'
-NeoBundle 'haya14busa/incsearch.vim'
-NeoBundle 'open-browser.vim'
-NeoBundle 'superbrothers/vim-vimperator'
+if has('vim_starting')
+	set rtp+=~/.vim/plugged/vim-plug
+	if !isdirectory(expand('~/.vim/plugged/vim-plug'))
+		echo 'install vim-plug...'
+		call system('mkdir -p ~/.vim/plugged/vim-plug')
+		call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
+	end
+endif
 
-call neobundle#end()
+call plug#begin('~/.vim/plugged')
+	Plug 'junegunn/vim-plug',{'dir': '~/.vim/plugged/vim-plug/autoload'}
+call plug#end()
 
 filetype plugin on 
 filetype indent on "Required!
