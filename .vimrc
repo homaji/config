@@ -1,44 +1,3 @@
-"	""NeoBundle
-"	set nocompatible
-"	filetype off
-"
-"	if has('vim_starting')
-"		set runtimepath+=~/.vim/bundle/neobundle.vim
-"	endif
-"	call neobundle#begin(expand('~/.vim/bundle/'))
-"NeoBundleFetch 'Shougo/neobundle.vim'
-"NeoBundle 'Shougo/vimproc', {
-"	\'build' : {
-"	\	'mac' : 'make -f make_mac.mak',
-"	\	'windows' : 'make -f make_mingw32.mak',
-"	\	'cygwin' : 'make -f make_cygwin.mak',
-"	\	'unix' : 'make -f make_unix.mak'
-"	\	},
-"	\}
-"NeoBundle 'Shougo/unite.vim'
-"NeoBundle 'Shougo/neomru.vim'
-"NeoBundle 'Shougo/vimshell'
-"NeoBundle 'Shougo/vimfiler'
-"NeoBundle 'Shougo/tabpagebuffer.vim'
-"NeoBundle 'thinca/vim-quickrun'
-"NeoBundle 'rhysd/clever-f.vim'
-"NeoBundle 'deton/jasegment.vim'
-"NeoBundle 'itchyny/lightline.vim'
-"NeoBundle 'basyura/jslint.vim'
-"NeoBundle 'glidenote/memolist.vim'
-"NeoBundle 'tpope/vim-fugitive'
-"NeoBundle 'JavaScript-Indent'
-"NeoBundle 'smartchr'
-"NeoBundle 'vim-scripts/spec.vim'
-"NeoBundle 'vim-scripts/project.tar.gz'
-"NeoBundle 'itchyny/calendar.vim'
-"NeoBundle 'mattn/webapi-vim'
-"NeoBundle 'mattn/vimplenote-vim'
-"NeoBundle 'haya14busa/incsearch.vim'
-"NeoBundle 'open-browser.vim'
-"NeoBundle 'superbrothers/vim-vimperator'
-"
-"call neobundle#end()
 
 if has('vim_starting')
 	set rtp+=~/.vim/plugged/vim-plug
@@ -51,7 +10,14 @@ endif
 
 call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/vim-plug',{'dir': '~/.vim/plugged/vim-plug/autoload'}
+	Plug 'Shougo/unite.vim'
+	Plug 'Shougo/vimproc'
+	Plug 'Shougo/neomru.vim'
+	Plug 'thinca/vim-quickrun'
+	Plug 'rhysd/clever-f.vim'
 call plug#end()
+
+let g:vimproc#download_windows_dll 
 
 filetype plugin on 
 filetype indent on "Required!
@@ -109,17 +75,6 @@ au BufEnter * execute 'lcd ' fnameescape(expand('%:p:h'))
 ""set Wildmode. Bash like complement
 set wildmode=list:longest
 
-""Using with Cygwin"
-" VIM faq-33.6
-" https://github.com/Shougo/shougo-s-github/blob/master/vim/rc/windows.rc.vim
-if has('win32') || has('win64')
-	set shellcmdflag=-c
-	set shellxquote=\"
-	set shell=bash.exe
-	set shellpipe=2>&1\|\ tee
-	set shellredir=>%s\ 2>&1
-	set grepprg=grep
-endif
 
 """Key Config"""
 "macvimではoption+\がleaderになるので変更
@@ -252,41 +207,6 @@ endfunction
 
 
 
-""vimfiler""
-"auto
-"autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit 
-"set default explor open in :e .
-let g:vimfiler_as_default_explorer = 1
-"set Safemode off
-let g:vimfiler_safe_mode_by_default=0
-"Edit file by tabedit
-let g:vimfiler_edit_action='tabopen'
-
-""Project.vim""
-".projectvimがそのフォルダにあれば自動で読み込み
-"Vimテクニックバイブルより
-if getcwd() != $HOME
-	if filereadable(getcwd(). '/.vimprojects')
-		Project .vimprojects
-	endif
-endif
-"Projectをトグルで開閉
-:nmap <silent> <Leader>p <Plug>ToggleProject
-
-""Calendar.vim
-:nmap <silent> <Leader>c :<C-u>Calendar -view=year -split=vertical -width=27<CR>
-
-
-""smartchr""
-inoremap <expr> = smartchr#loop('=', ' = ', ' == ')
-
-""memolist""
-let g:memolist_path = "$HOME/data/doc/lifelog"
-let g:memolist_unite = 1
-let g:memolist_unite_source = "file_rec"
-let g:memolist_unite_option = "-start-insert"
-
-
 ""Unite""
 let g:unite_split_rule = "botright"
 let g:unite_winheight= 20
@@ -325,17 +245,6 @@ function! MyFilename()
 	return  ' ' ! = expand('%:F') ? expand('%:F') : '[No Name]'
 endfunction
 	
-
-""incSearch
-map / <Plug>(incsearch-forward)
-map ? <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
-""OpenBrowser
-"nmap <Leader>o <Plug>(openbrowser-open)
-"vmap <Leader>o <Plug>(openbrowser-open)
-
-nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 
 ""Scouter
 function! Scouter(file, ...)
