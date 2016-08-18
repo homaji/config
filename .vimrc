@@ -93,3 +93,35 @@ let g:unite_data_directory = $HOME.'/.vim/cache/unite'
 let g:neomru#file_mru_path = $HOME.'/.vim/cache/neomru/file'
 let g:neomru#directory_mru_path = $HOME.'/.vim/cache/neomru/directory'
 
+""lightline""
+let g:lightline = { 
+		\'colorscheme': 'wombat'
+		\,
+		\'active': {
+		\  'left':[ ['mode', 'paste'], ['readonly','modified'],['filename'] ],
+		\  'right':[ ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'] ],
+		\},
+		\'component_function': {
+		\    'mode': 'Mymode',
+		\ },
+ 		\ 'separator': { 'left': "\u2b80", 'right': "\u2b82" }, 
+		\ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
+		\ 'tabline_separator': { 'left': "|", 'right': "|" }, 
+		\ 'tabline_subseparator': { 'left': "|" , 'right': "|" } 
+		\}
+
+let g:lightline.tabline = {'right':[['rows'],['cd'],['tabopts']]}
+let g:lightline.tab = {'active':['prefix','filename']}
+let g:lightline.tab.inactive = g:lightline.tab.active
+
+function! Mymode()
+	return  &ft == 'unite' ? 'Unite' :
+	      \ &ft == 'vimfiler' ? 'VimFiler' :
+	      \ &ft == 'vimshell' ? 'VimShell' :
+	      \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+function! MyFilename()
+	return  ' ' ! = expand('%:F') ? expand('%:F') : '[No Name]'
+endfunction
+	
+
