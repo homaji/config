@@ -1,6 +1,10 @@
 
 ""runtimepath
+if has('win32')||('win64')
+  let $MY_VIMRUNTIME = $HOME.'.vim'
+elseif
   let $MY_VIMRUNTIME = $HOME.'/.vim'
+end
   let $VIMPLUG= $MY_VIMRUNTIME . '/plugged'
   set rtp+=$MY_VIMRUNTIME,$VIMPLUG
 
