@@ -38,6 +38,8 @@ set viminfo+=n$MY_VIMRUNTIME/viminfo.txt
 "Use Clipboard"
 set clipboard=unnamed,autoselect
 
+""Buffer
+set hidden
 
 """Key Config"""
 
