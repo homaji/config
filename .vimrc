@@ -82,3 +82,14 @@ inoremap jk <ESC>
 nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
 ""Reload .vimrc""
 nnoremap <Space>s. :<C-u>source $MYVIMRC<CR>
+
+
+"""Plugin Setting
+
+""Unite""
+let g:unite_split_rule = "botright"
+let g:unite_winheight= 20
+let g:unite_data_directory = $HOME.'/.vim/cache/unite'
+let g:neomru#file_mru_path = $HOME.'/.vim/cache/neomru/file'
+let g:neomru#directory_mru_path = $HOME.'/.vim/cache/neomru/directory'
+
