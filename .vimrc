@@ -14,3 +14,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'itchyny/lightline.vim'
 	Plug 'rhysd/clever-f.vim'
 call plug#end()
+
+if has('win32')||('win64')
+	let g:vimproc#download_windows_dll =1
+endif
