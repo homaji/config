@@ -41,6 +41,9 @@ set clipboard=unnamed,autoselect
 ""Buffer
 set hidden
 
+""set Wildmode. Bash like complement
+set wildmode=list:longest
+
 """Key Config"""
 
 ""Change <Leader>
