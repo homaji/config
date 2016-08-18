@@ -160,3 +160,9 @@ endfunction
 ""Changelog""
 let g:changelog_username = "homaji"
 let g:changelog_timeformat = "%Y-%m-%d"
+
+""Clever-f"
+"大文字を入力したときだけ、大文字小文字を区別
+let g:clever_f_smart_case = 1
+"migemoっぽい検索
+let g:clever_f_use_migemo = 1
