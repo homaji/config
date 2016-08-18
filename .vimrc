@@ -161,6 +161,59 @@ endfunction
 let g:changelog_username = "homaji"
 let g:changelog_timeformat = "%Y-%m-%d"
 
+""quickrun.vim""
+" 新しいウィンドウを下に開く
+set splitbelow
+
+"
+"quickrun for sql
+let g:quickrun_config = {}
+let g:quickrun_config['sql'] = {
+		\ 'command': 'mysql',
+		\ 'exec': ['%c  %o < %s'],
+		\ 'cmdopt': '%{MakeMySQLCommandOptions()}'
+		\}
+
+let g:mysql_config_host = '10.211.55.6'
+let g:mysql_config_port = ''
+let g:mysql_config_user = 'homaji'
+function! MakeMySQLCommandOptions()
+	if !exists("g:mysql_config_host")
+		let g:mysql_config_host = input("host> ")
+	endif
+	if !exists("g:mysql_config_port")
+		let g:mysql_config_port = input("port> ")
+	endif
+	if !exists("g:mysql_config_user")
+		let g:mysql_config_user = input("user> ")
+	endif
+	if !exists("g:mysql_config_pass")
+		let g:mysql_config_pass = input("password> ")
+	endif
+	if !exists("g:mysql_config_db")
+		let g:mysql_config_db = input("database> ")
+	endif
+	
+	let optlist = []
+	if g:mysql_config_user != ''
+		call add(optlist, '-u ' . g:mysql_config_user)
+	endif
+	if g:mysql_config_host != ''
+		call add(optlist, '-h ' . g:mysql_config_host)
+	endif
+	if g:mysql_config_pass != ''
+		call add(optlist, '-p' . g:mysql_config_pass)
+	endif
+	if g:mysql_config_port != ''
+		call add(optlist, '-P ' . g:mysql_config_port)
+	endif
+	if exists("g:mysql_config_otheropts")
+		call add(optlist, g:mysql_config_otheropts)
+	endif
+
+    call add(optlist, g:mysql_config_db)
+    return join(optlist, ' ') 
+endfunction
 ""Clever-f"
 "大文字を入力したときだけ、大文字小文字を区別
 let g:clever_f_smart_case = 1
