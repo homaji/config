@@ -2,7 +2,7 @@
 ""runtimepath
 if has('win32')||('win64')
   let $MY_VIMRUNTIME = $HOME.'.vim'
-elseif
+elseif has('mac')
   let $MY_VIMRUNTIME = $HOME.'/.vim'
 end
   let $VIMPLUG= $MY_VIMRUNTIME . '/plugged'
@@ -30,10 +30,10 @@ filetype indent on
 syntax on
 
 set backup
-set backupdir=$HOME/.vim/vimtemp
-set directory=$HOME/.vim/vimtemp
-set undodir=$HOME/.vim/vimtemp
-set viminfo+=n$HOME/.vim/viminfo.txt
+set backupdir=$MY_VIMRUNTIME/vimtemp
+set directory=$MY_VIMRUNTIME/vimtemp
+set undodir=$MY_VIMRUNTIME/vimtemp
+set viminfo+=n$MY_VIMRUNTIME/viminfo.txt
 
 "Use Clipboard"
 set clipboard=unnamed,autoselect
