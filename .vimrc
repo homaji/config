@@ -6,11 +6,11 @@ elseif has('mac')
   let $MY_VIMRUNTIME = $HOME.'/.vim'
 end
   let $VIMPLUG= $MY_VIMRUNTIME . '/plugged'
-  set rtp+=$MY_VIMRUNTIME,$VIMPLUG
+  set rtp^=$MY_VIMRUNTIME,$VIMPLUG
 
 ""Vim-Plug
 call plug#begin('~/.vim/plugged')
-	Plug 'junegunn/vim-plug',{'dir': '~/.vim/plugged/autoload'}
+	Plug 'junegunn/vim-plug'
 	Plug 'Shougo/unite.vim'
 	Plug 'Shougo/vimproc'
 	Plug 'Shougo/neomru.vim'
@@ -83,6 +83,34 @@ nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
 ""Reload .vimrc""
 nnoremap <Space>s. :<C-u>source $MYVIMRC<CR>
 
+"""Display Setting
+
+""Show Invisible Characters""
+"http://qiita.com/X___MOON___X/items/26d3f292537bad197f64
+map <silent> <F3> :set list!<CR>
+set list
+set listchars=tab:>_,trail:_
+
+""Show all lines
+"http://itchyny.hatenablog.com/entry/2014/12/25/090000
+set display=lastline
+
+""Set Tab line
+"http://d.hatena.ne.jp/thinca/20111204/1322932585
+set showtabline=2
+set guioptions-=e
+
+""Set list height
+set pumheight=10
+""Set matching
+set showmatch
+set matchtime=1
+
+""TabWidth
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set noexpandtab
 
 """Plugin Setting
 
