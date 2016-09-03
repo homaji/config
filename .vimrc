@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'Shougo/vimproc'
 	Plug 'Shougo/neomru.vim'
 	Plug 'thinca/vim-quickrun'
-	Plug 'thinca/qfreplace'
+	Plug 'thinca/vim-qfreplace'
 	Plug 'itchyny/lightline.vim'
 	Plug 'rhysd/clever-f.vim'
 call plug#end()
