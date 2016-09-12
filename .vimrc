@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'thinca/vim-qfreplace'
 	Plug 'itchyny/lightline.vim'
 	Plug 'rhysd/clever-f.vim'
+	Plug 'scrooloose/syntastic'
 ""About Python
 	Plug 'davidhalter/jedi-vim',{ 'for':'python'}
 call plug#end()
