@@ -12,6 +12,7 @@ end
 call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/vim-plug'
 	Plug 'Shougo/unite.vim'
+	Plug 'Shougo/unite-outline'
 	Plug 'Shougo/vimproc'
 	Plug 'Shougo/neomru.vim'
 	Plug 'thinca/vim-quickrun'
@@ -19,7 +20,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'itchyny/lightline.vim'
 	Plug 'rhysd/clever-f.vim'
 ""About Python
-	Plug 'davidhalter/jedi-vim'
+	Plug 'davidhalter/jedi-vim',{ 'for':'python'}
 call plug#end()
 
 if has('win32')||('win64')
