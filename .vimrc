@@ -18,6 +18,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'thinca/vim-qfreplace'
 	Plug 'itchyny/lightline.vim'
 	Plug 'rhysd/clever-f.vim'
+""About Python
+	Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 if has('win32')||('win64')
