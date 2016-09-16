@@ -20,6 +20,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'itchyny/lightline.vim'
 	Plug 'rhysd/clever-f.vim'
 	Plug 'scrooloose/syntastic'
+	Plug 'altercation/vim-colors-solarized'
 ""About Python
 	Plug 'davidhalter/jedi-vim',{ 'for':'python'}
 call plug#end()
@@ -34,6 +35,8 @@ filetype plugin on
 filetype indent on 
 syntax on
 
+set encoding=utf-8
+set fileencodings=utf-8,cp932
 set backup
 set backupdir=$MY_VIMRUNTIME/vimtemp
 set directory=$MY_VIMRUNTIME/vimtemp
@@ -94,6 +97,10 @@ nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
 nnoremap <Space>s. :<C-u>source $MYVIMRC<CR>
 
 """Display Setting
+
+""ColorScheme
+set background=dark
+colorscheme solarized
 
 ""Show Invisible Characters""
 "http://qiita.com/X___MOON___X/items/26d3f292537bad197f64
