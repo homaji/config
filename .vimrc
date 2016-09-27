@@ -99,7 +99,7 @@ nnoremap <Space>s. :<C-u>source $MYVIMRC<CR>
 """Display Setting
 
 ""ColorScheme
-set background=dark
+set background=light
 colorscheme solarized
 
 ""Show Invisible Characters""
@@ -140,7 +140,7 @@ let g:neomru#directory_mru_path = $HOME.'/.vim/cache/neomru/directory'
 
 ""lightline""
 let g:lightline = { 
-		\'colorscheme': 'wombat'
+		\'colorscheme': 'solarized'
 		\,
 		\'active': {
 		\  'left':[ ['mode', 'paste'], ['readonly','modified'],['filename'] ],
