@@ -1,6 +1,3 @@
-colorscheme desert
-
-set guifont=Ricty¥ 10
 
 "Hide menu and Tool bar 
 nnoremap <silent> <C-F2> :<C-u>call <SID>toggle_guioptions()<CR> 
@@ -14,3 +11,8 @@ function! s:toggle_guioptions()
 		set guioptions+=m 
 	endif 
 endfunction
+
+source $VIMRUNTIME/delmenu.vim
+set langmenu=ja_jp.utf-8
+source $VIMRUNTIME/menu.vim
+
