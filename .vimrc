@@ -21,6 +21,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'rhysd/clever-f.vim'
 	Plug 'scrooloose/syntastic'
 	Plug 'altercation/vim-colors-solarized'
+	Plug 'tyru/eskk.vim'
 ""About Python
 	Plug 'davidhalter/jedi-vim',{ 'for':'python'}
 call plug#end()
@@ -34,6 +35,7 @@ endif
 filetype plugin on 
 filetype indent on 
 syntax on
+syntax enable
 
 set encoding=utf-8
 set fileencodings=utf-8,cp932
@@ -99,8 +101,13 @@ nnoremap <Space>s. :<C-u>source $MYVIMRC<CR>
 """Display Setting
 
 ""ColorScheme
+let scheme = 'solarized'
+augroup guicolorscheme
+	autocmd!
+	execute 'autocmd GUIEnter * colorscheme' scheme
+augroup END
+execute 'colorscheme' scheme
 set background=light
-colorscheme solarized
 
 ""Show Invisible Characters""
 "http://qiita.com/X___MOON___X/items/26d3f292537bad197f64
@@ -232,6 +239,31 @@ let g:clever_f_smart_case = 1
 "migemoっぽい検索
 let g:clever_f_use_migemo = 1
 
+""eskk
+set imdisable
+if has('vim_starting')
+	let g:eskk#directory= '~/DICTS/eskk/'
+	let g:eskk#dictionary='~/DICTS/eskk/USER.L'
+
+	if  has('mac')
+		leg g:eskk#large_dictionary = {
+					\ 'path':"~/Library/Application\ Support/AquaSKK/SKK-JISYO.L",
+					\'sorted':1,
+					\'encoding': 'euc-jp'
+					\}
+	elseif has('win32')||has('win64')
+		let g:eskk#large_dictionary = {
+					\	'path':"~/DICTS/SKK-JISYO.L",
+					\	'sorted':1,
+					\	'encoding': 'euc-jp'
+					\}
+	else
+	endif
+endif
+let g:eskk#debug=0
+let g:eskk#egg_like_newline=1
+let g:eskk#revert_henkan_style="okuri"
+let g:eskk#enable_completion=0
 
 """Function
 ""Scouter
