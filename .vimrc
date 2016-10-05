@@ -109,6 +109,11 @@ augroup END
 execute 'colorscheme' scheme
 set background=light
 
+""FontRicty for Powerline BoldForPowerline
+
+set guifont=Ricty_For_Powerline:h12:b
+set guifontwide=Ricty_For_Powerline:h12:b
+
 ""Show Invisible Characters""
 "http://qiita.com/X___MOON___X/items/26d3f292537bad197f64
 map <silent> <F3> :set list!<CR>
