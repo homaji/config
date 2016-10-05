@@ -248,10 +248,10 @@ let g:clever_f_use_migemo = 1
 set imdisable
 if has('vim_starting')
 	if  has('mac')
-		let g:eskk#directory= '~/.eskk/'
-		let g:eskk#dictionary='~/.eskk/USER.L'
+		let g:eskk#directory= '~/.eskk/usr'
+		let g:eskk#dictionary='~/.eskk/usr/USER.L'
 		let g:eskk#large_dictionary = {
-					\ 'path':"~/Library/Application\ Support/AquaSKK/SKK-JISYO.L",
+					\ 'path':"~/.eskk/SKK-JISYO.L",
 					\'sorted':1,
 					\'encoding': 'euc-jp'
 					\}
