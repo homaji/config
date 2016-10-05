@@ -247,16 +247,17 @@ let g:clever_f_use_migemo = 1
 ""eskk
 set imdisable
 if has('vim_starting')
-	let g:eskk#directory= '~/DICTS/eskk/'
-	let g:eskk#dictionary='~/DICTS/eskk/USER.L'
-
 	if  has('mac')
-		leg g:eskk#large_dictionary = {
+		let g:eskk#directory= '~/.eskk/'
+		let g:eskk#dictionary='~/.eskk/USER.L'
+		let g:eskk#large_dictionary = {
 					\ 'path':"~/Library/Application\ Support/AquaSKK/SKK-JISYO.L",
 					\'sorted':1,
 					\'encoding': 'euc-jp'
 					\}
 	elseif has('win32')||has('win64')
+		let g:eskk#directory= '~/DICTS/eskk/'
+		let g:eskk#dictionary='~/DICTS/eskk/USER.L'
 		let g:eskk#large_dictionary = {
 					\	'path':"~/DICTS/SKK-JISYO.L",
 					\	'sorted':1,
