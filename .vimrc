@@ -22,6 +22,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/syntastic'
 	Plug 'altercation/vim-colors-solarized'
 	Plug 'tyru/eskk.vim'
+    Plug 'maralla/completor.vim'
 ""About Python
 	Plug 'davidhalter/jedi-vim',{ 'for':'python'}
 call plug#end()
