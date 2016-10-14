@@ -121,6 +121,11 @@ nnoremap <ESC><ESC> :<C-u>set nohlsearch!<CR>
 
 """Display Setting
 
+"Cursol
+set number
+set cursorline
+
+
 ""ColorScheme
 let scheme = 'solarized'
 augroup guicolorscheme
