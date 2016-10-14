@@ -71,6 +71,7 @@ set hlsearch
 let g:mapleader = ','
 "map \ <leader>
 
+
 ""move to other Windows
 "http://qiita.com/tekkoc/items/98adcadfa4bdc8b5a6ca
 nnoremap s <Nop>
@@ -107,6 +108,9 @@ inoremap jj <ESC>
 nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
 ""Reload .vimrc""
 nnoremap <Space>s. :<C-u>source $MYVIMRC<CR>
+
+""No hlsearch with ESC-ESC
+nnoremap <ESC><ESC> :<C-u>set nohlsearch!<CR>
 
 """Display Setting
 
