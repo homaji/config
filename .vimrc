@@ -160,6 +160,8 @@ set pumheight=10
 ""Set matching
 set showmatch
 set matchtime=1
+"enhance % (tab jump)
+source $VIMRUNTIME/macros/matchit.vim
 
 ""TabWidth
 set tabstop=4
