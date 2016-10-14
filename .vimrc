@@ -58,6 +58,12 @@ set hidden
 ""set Wildmode. Bash like complement
 set wildmode=list:longest
 
+""Search
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+
 """Key Config"""
 
 ""Change <Leader>
@@ -94,7 +100,7 @@ nnoremap sQ :<C-u>bd<CR>
 nnoremap Y y$
 
 ""ESC in insert-mode
-inoremap jk <ESC>
+inoremap jj <ESC>
 
 ""Edit .vimrc""
 "http://whileimautomaton.net/2008/08/vimworkshop3-kana-presentation
