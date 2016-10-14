@@ -71,6 +71,13 @@ set hlsearch
 let g:mapleader = ','
 "map \ <leader>
 
+""Cursol move
+set whichwrap=b,s,h,l,<,>,[,],~
+
+nnoremap j gj
+nnoremap k gk
+nnoremap <down> gj
+nnoremap <up> gk
 
 ""move to other Windows
 "http://qiita.com/tekkoc/items/98adcadfa4bdc8b5a6ca
