@@ -23,6 +23,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'altercation/vim-colors-solarized'
 	Plug 'tyru/eskk.vim'
     Plug 'maralla/completor.vim'
+    Plug 'plasticboy/vim-markdown'
+    Plug 'kannokanno/previm'
+    Plug 'tyru/open-browser.vim'
 ""About Python
 	Plug 'davidhalter/jedi-vim',{ 'for':'python'}
 call plug#end()
@@ -171,6 +174,9 @@ set shiftwidth=4
 set expandtab
 set smartindent
 
+"""File Type Setting
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+
 
 """Plugin Setting
 
@@ -301,6 +307,9 @@ let g:eskk#debug=0
 let g:eskk#egg_like_newline=1
 let g:eskk#revert_henkan_style="okuri"
 let g:eskk#enable_completion=0
+
+""previm
+let g:previm_enable_realtime=1
 
 """Function
 ""Scouter
