@@ -309,7 +309,7 @@ let g:eskk#revert_henkan_style="okuri"
 let g:eskk#enable_completion=0
 
 ""previm
-let g:previm_enable_realtime=1
+let g:previm_enable_realtime = 1
 
 """Function
 ""Scouter
