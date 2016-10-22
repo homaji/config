@@ -106,6 +106,8 @@ nnoremap sf :<C-u>Unite file_mru<CR>
 "s+qQ kill buffer or window
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
+"s+e Open netrw
+nnoremap se :<C-u>Vexplore<CR>
 
 ""Change yank key. Yank from cursol to line end.
 "http://itchyny.hatenablog.com/entry/2014/12/25/090000
@@ -140,10 +142,13 @@ execute 'colorscheme' scheme
 set background=light
 
 ""FontRicty for Powerline BoldForPowerline
-
-set guifont=Ricty_For_Powerline:h12:b
-set guifontwide=Ricty_For_Powerline:h12:b
-
+if has('win32')||('win64')
+    set guifont=Ricty_For_Powerline:h12:b
+    set guifontwide=Ricty_For_Powerline:h12:b
+elseif has('mac')
+    set guifont=Ricty-Bold:h14
+    set guifontwide=Ricty-Bold:h14
+endif
 ""Show Invisible Characters""
 "http://qiita.com/X___MOON___X/items/26d3f292537bad197f64
 map <silent> <F3> :set list!<CR>
@@ -173,6 +178,14 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
+
+""Netrw settings
+let g:netrw_banner = 0 "Don't show banner
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4 "open in previous window
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+
 
 """File Type Setting
 autocmd BufRead,BufNewFile *.md set filetype=markdown
@@ -310,6 +323,9 @@ let g:eskk#enable_completion=0
 
 ""previm
 let g:previm_enable_realtime = 1
+
+let g:previm_disable_default_css = 1
+let g:previm_custom_css_path = '~/data/dev/markdown_preview.css'
 
 """Function
 ""Scouter
