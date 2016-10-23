@@ -11,8 +11,9 @@ end
 ""Vim-Plug
 call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/vim-plug'
-	Plug 'Shougo/unite.vim'
+    Plug 'Shougo/unite.vim'
 	Plug 'Shougo/unite-outline'
+    Plug 'Shougo/tabpagebuffer.vim'
 	Plug 'Shougo/vimproc'
 	Plug 'Shougo/neomru.vim'
 	Plug 'thinca/vim-quickrun'
