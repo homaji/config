@@ -126,12 +126,17 @@ nnoremap <Space>s. :<C-u>source $MYVIMRC<CR>
 ""No hlsearch with ESC-ESC
 nnoremap <ESC><ESC> :<C-u>set nohlsearch!<CR>
 
+""Toggle relativenumber
+nnoremap <F2> :<C-u>setlocal relativenumber!<CR>
+
 """Display Setting
 
 "Cursol
 set number
 set cursorline
 
+"number
+set relativenumber
 
 ""ColorScheme
 let scheme = 'solarized'
