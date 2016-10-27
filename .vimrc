@@ -104,6 +104,7 @@ nnoremap sv :<C-u>vs<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 nnoremap sf :<C-u>Unite file_mru<CR>
+nnoremap sg :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 "s+qQ kill buffer or window
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
@@ -205,6 +206,11 @@ let g:unite_winheight= 20
 let g:unite_data_directory = $HOME.'/.vim/cache/unite'
 let g:neomru#file_mru_path = $HOME.'/.vim/cache/neomru/file'
 let g:neomru#directory_mru_path = $HOME.'/.vim/cache/neomru/directory'
+if executable('pt')
+    let g:unite_source_grep_command = 'pt'
+    let g:unite_source_grep_default_opts ='--nogroup --nocolor'
+    let g:unite_source_grep_recursive_opt = ''
+endif
 
 ""lightline""
 let g:lightline = { 
