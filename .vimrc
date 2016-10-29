@@ -2,7 +2,7 @@
 ""runtimepath
 if has('win32')||('win64')
   let $MY_VIMRUNTIME = $HOME.'.vim'
-elseif has('mac')
+elseif has('mac')||has('unix')
   let $MY_VIMRUNTIME = $HOME.'/.vim'
 end
   let $VIMPLUG= $MY_VIMRUNTIME . '/plugged'
@@ -29,6 +29,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tyru/open-browser.vim'
 ""About Python
 	Plug 'davidhalter/jedi-vim',{ 'for':'python'}
+    Plug 'Flake8-vim',{'for':'python'}
 call plug#end()
 
 if has('win32')||('win64')
@@ -166,6 +167,7 @@ set listchars=tab:>_,trail:_
 "http://itchyny.hatenablog.com/entry/2014/12/25/090000
 set display=lastline
 
+
 ""Set Tab line
 "http://d.hatena.ne.jp/thinca/20111204/1322932585
 set showtabline=2
@@ -213,6 +215,7 @@ if executable('pt')
 endif
 
 ""lightline""
+set laststatus=2
 let g:lightline = { 
 		\'colorscheme': 'solarized'
 		\,
@@ -226,12 +229,11 @@ let g:lightline = {
  		\ 'separator': { 'left': "\u2b80", 'right': "\u2b82" }, 
 		\ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
 		\ 'tabline_separator': { 'left': "|", 'right': "|" }, 
-		\ 'tabline_subseparator': { 'left': "|" , 'right': "|" } 
+		\ 'tabline_subseparator': { 'left': "|" , 'right': "|" },
+        \ 'tabline':{'right':[['rows'],['cd'],['tabopts']]},
+        \ 'tab': {'active':['prefix','filename']}
 		\}
 
-let g:lightline.tabline = {'right':[['rows'],['cd'],['tabopts']]}
-let g:lightline.tab = {'active':['prefix','filename']}
-let g:lightline.tab.inactive = g:lightline.tab.active
 
 function! Mymode()
 	return  &ft == 'unite' ? 'Unite' :
