@@ -8,32 +8,35 @@ end
   let $VIMPLUG= $MY_VIMRUNTIME . '/plugged'
   set rtp^=$MY_VIMRUNTIME,$VIMPLUG
 
+""Path
+let PATH = expand("~/.pyenv/shims") . ":" . $PATH
+
 ""Vim-Plug
 call plug#begin('~/.vim/plugged')
-	Plug 'junegunn/vim-plug'
+    Plug 'junegunn/vim-plug'
     Plug 'Shougo/unite.vim'
-	Plug 'Shougo/unite-outline'
+    Plug 'Shougo/unite-outline'
     Plug 'Shougo/tabpagebuffer.vim'
-	Plug 'Shougo/vimproc'
-	Plug 'Shougo/neomru.vim'
-	Plug 'thinca/vim-quickrun'
-	Plug 'thinca/vim-qfreplace'
-	Plug 'itchyny/lightline.vim'
-	Plug 'rhysd/clever-f.vim'
-	Plug 'scrooloose/syntastic'
-	Plug 'altercation/vim-colors-solarized'
-	Plug 'tyru/eskk.vim'
+    Plug 'Shougo/vimproc'
+    Plug 'Shougo/neomru.vim'
+    Plug 'thinca/vim-quickrun'
+    Plug 'thinca/vim-qfreplace'
+    Plug 'itchyny/lightline.vim'
+    Plug 'rhysd/clever-f.vim'
+    Plug 'scrooloose/syntastic'
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'tyru/eskk.vim'
     Plug 'maralla/completor.vim'
     Plug 'plasticboy/vim-markdown'
     Plug 'kannokanno/previm'
     Plug 'tyru/open-browser.vim'
 ""About Python
-	Plug 'davidhalter/jedi-vim',{ 'for':'python'}
+    Plug 'davidhalter/jedi-vim',{ 'for':'python'}|Plug 'lambdalisue/vim-pyenv'
     Plug 'Flake8-vim',{'for':'python'}
 call plug#end()
 
 if has('win32')||('win64')
-	let g:vimproc#download_windows_dll =1
+    let g:vimproc#download_windows_dll =1
 endif
 
 
@@ -143,8 +146,8 @@ set relativenumber
 ""ColorScheme
 let scheme = 'solarized'
 augroup guicolorscheme
-	autocmd!
-	execute 'autocmd GUIEnter * colorscheme' scheme
+    autocmd!
+    execute 'autocmd GUIEnter * colorscheme' scheme
 augroup END
 execute 'colorscheme' scheme
 set background=light
@@ -153,9 +156,9 @@ set background=light
 if has('win32')||('win64')
     set guifont=Ricty_For_Powerline:h12:b
     set guifontwide=Ricty_For_Powerline:h12:b
-elseif has('mac')
-    set guifont=Ricty-Bold:h14
-    set guifontwide=Ricty-Bold:h14
+elseif has('mac')||('unix')
+    set guifont=Ricty:h18
+    set guifontwide=Ricty:h18
 endif
 ""Show Invisible Characters""
 "http://qiita.com/X___MOON___X/items/26d3f292537bad197f64
@@ -217,32 +220,32 @@ endif
 ""lightline""
 set laststatus=2
 let g:lightline = { 
-		\'colorscheme': 'solarized'
-		\,
-		\'active': {
-		\  'left':[ ['mode', 'paste'], ['readonly','modified'],['filename'] ],
-		\  'right':[ ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'] ],
-		\},
-		\'component_function': {
-		\    'mode': 'Mymode',
-		\ },
- 		\ 'separator': { 'left': "\u2b80", 'right': "\u2b82" }, 
-		\ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
-		\ 'tabline_separator': { 'left': "|", 'right': "|" }, 
-		\ 'tabline_subseparator': { 'left': "|" , 'right': "|" },
+        \'colorscheme': 'solarized'
+        \,
+        \'active': {
+        \  'left':[ ['mode', 'paste'], ['readonly','modified'],['filename'] ],
+        \  'right':[ ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'] ],
+        \},
+        \'component_function': {
+        \    'mode': 'Mymode',
+        \ },
+         \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" }, 
+        \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
+        \ 'tabline_separator': { 'left': "|", 'right': "|" }, 
+        \ 'tabline_subseparator': { 'left': "|" , 'right': "|" },
         \ 'tabline':{'right':[['rows'],['cd'],['tabopts']]},
         \ 'tab': {'active':['prefix','filename']}
-		\}
+        \}
 
 
 function! Mymode()
-	return  &ft == 'unite' ? 'Unite' :
-	      \ &ft == 'vimfiler' ? 'VimFiler' :
-	      \ &ft == 'vimshell' ? 'VimShell' :
-	      \ winwidth(0) > 60 ? lightline#mode() : ''
+    return  &ft == 'unite' ? 'Unite' :
+          \ &ft == 'vimfiler' ? 'VimFiler' :
+          \ &ft == 'vimshell' ? 'VimShell' :
+          \ winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 function! MyFilename()
-	return  ' ' ! = expand('%:F') ? expand('%:F') : '[No Name]'
+    return  ' ' ! = expand('%:F') ? expand('%:F') : '[No Name]'
 endfunction
 
 ""Changelog""
@@ -257,47 +260,47 @@ set splitbelow
 "quickrun for sql
 let g:quickrun_config = {}
 let g:quickrun_config['sql'] = {
-		\ 'command': 'mysql',
-		\ 'exec': ['%c  %o < %s'],
-		\ 'cmdopt': '%{MakeMySQLCommandOptions()}'
-		\}
+        \ 'command': 'mysql',
+        \ 'exec': ['%c  %o < %s'],
+        \ 'cmdopt': '%{MakeMySQLCommandOptions()}'
+        \}
 
 let g:mysql_config_host = '10.211.55.6'
 let g:mysql_config_port = ''
 let g:mysql_config_user = 'homaji'
 function! MakeMySQLCommandOptions()
-	if !exists("g:mysql_config_host")
-		let g:mysql_config_host = input("host> ")
-	endif
-	if !exists("g:mysql_config_port")
-		let g:mysql_config_port = input("port> ")
-	endif
-	if !exists("g:mysql_config_user")
-		let g:mysql_config_user = input("user> ")
-	endif
-	if !exists("g:mysql_config_pass")
-		let g:mysql_config_pass = input("password> ")
-	endif
-	if !exists("g:mysql_config_db")
-		let g:mysql_config_db = input("database> ")
-	endif
-	
-	let optlist = []
-	if g:mysql_config_user != ''
-		call add(optlist, '-u ' . g:mysql_config_user)
-	endif
-	if g:mysql_config_host != ''
-		call add(optlist, '-h ' . g:mysql_config_host)
-	endif
-	if g:mysql_config_pass != ''
-		call add(optlist, '-p' . g:mysql_config_pass)
-	endif
-	if g:mysql_config_port != ''
-		call add(optlist, '-P ' . g:mysql_config_port)
-	endif
-	if exists("g:mysql_config_otheropts")
-		call add(optlist, g:mysql_config_otheropts)
-	endif
+    if !exists("g:mysql_config_host")
+        let g:mysql_config_host = input("host> ")
+    endif
+    if !exists("g:mysql_config_port")
+        let g:mysql_config_port = input("port> ")
+    endif
+    if !exists("g:mysql_config_user")
+        let g:mysql_config_user = input("user> ")
+    endif
+    if !exists("g:mysql_config_pass")
+        let g:mysql_config_pass = input("password> ")
+    endif
+    if !exists("g:mysql_config_db")
+        let g:mysql_config_db = input("database> ")
+    endif
+    
+    let optlist = []
+    if g:mysql_config_user != ''
+        call add(optlist, '-u ' . g:mysql_config_user)
+    endif
+    if g:mysql_config_host != ''
+        call add(optlist, '-h ' . g:mysql_config_host)
+    endif
+    if g:mysql_config_pass != ''
+        call add(optlist, '-p' . g:mysql_config_pass)
+    endif
+    if g:mysql_config_port != ''
+        call add(optlist, '-P ' . g:mysql_config_port)
+    endif
+    if exists("g:mysql_config_otheropts")
+        call add(optlist, g:mysql_config_otheropts)
+    endif
 
     call add(optlist, g:mysql_config_db)
     return join(optlist, ' ') 
@@ -311,24 +314,24 @@ let g:clever_f_use_migemo = 1
 ""eskk
 set imdisable
 if has('vim_starting')
-	if  has('mac')
-		let g:eskk#directory= '~/.eskk/usr'
-		let g:eskk#dictionary='~/.eskk/usr/USER.L'
-		let g:eskk#large_dictionary = {
-					\ 'path':"~/.eskk/SKK-JISYO.L",
-					\'sorted':1,
-					\'encoding': 'euc-jp'
-					\}
-	elseif has('win32')||has('win64')
-		let g:eskk#directory= '~/DICTS/eskk/'
-		let g:eskk#dictionary='~/DICTS/eskk/USER.L'
-		let g:eskk#large_dictionary = {
-					\	'path':"~/DICTS/SKK-JISYO.L",
-					\	'sorted':1,
-					\	'encoding': 'euc-jp'
-					\}
-	else
-	endif
+    if  has('mac')
+        let g:eskk#directory= '~/.eskk/usr'
+        let g:eskk#dictionary='~/.eskk/usr/USER.L'
+        let g:eskk#large_dictionary = {
+                    \ 'path':"~/.eskk/SKK-JISYO.L",
+                    \'sorted':1,
+                    \'encoding': 'euc-jp'
+                    \}
+    elseif has('win32')||has('win64')
+        let g:eskk#directory= '~/DICTS/eskk/'
+        let g:eskk#dictionary='~/DICTS/eskk/USER.L'
+        let g:eskk#large_dictionary = {
+                    \    'path':"~/DICTS/SKK-JISYO.L",
+                    \    'sorted':1,
+                    \    'encoding': 'euc-jp'
+                    \}
+    else
+    endif
 endif
 let g:eskk#debug=0
 let g:eskk#egg_like_newline=1
