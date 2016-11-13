@@ -1,17 +1,13 @@
-"####Settings####
+
+"Settings
 
 set runtimepath=~/vimperator
 
-"エディターのパスを設定
-set editor="%VIM%/gvim.exe -f\ --remote-tab-wait-silent"
 
 "GUIの設定
 "旧バージョンでの表記
 "set guioptions=mnr
 set toolbars=noaddons,nonavigation
-
-"タブの追加ボタンを非表示
-"style chrome://* .tabs-newtab-button { display: none;}
 
 set status=input,location,position
 
@@ -59,7 +55,7 @@ set hintchars="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 "####Mappings####
 "Leaderの設定"
-let mapleader='\'
+let mapleader=','
 
 "css削除
 map	!	:set invum<CR>
