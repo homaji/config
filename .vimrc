@@ -46,7 +46,7 @@ call plug#begin('~/.vim/plugged')
 ""About Python
     Plug 'davidhalter/jedi-vim',{ 'for':'python'}
     Plug 'Flake8-vim',{'for':'python'}
-    Plug 'lambdalisue/vim-pyenv',{ 'on': 'jedi-vim' }
+    Plug 'lambdalisue/vim-pyenv',{ 'on': 'jedi-vim' , 'for':'python'}
 call plug#end()
 
 if has('win32')||('win64')
