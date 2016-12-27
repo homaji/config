@@ -8,8 +8,21 @@ end
   let $VIMPLUG= $MY_VIMRUNTIME . '/plugged'
   set rtp^=$MY_VIMRUNTIME,$VIMPLUG
 
-""Path
-let PATH = expand("~/.pyenv/shims") . ":" . $PATH
+""for Pyrhon Path
+function! IncludePath(path)
+    "define delimiter depends on platform
+    if has('win32')|| has('win64')
+        let delimiter = ";"
+    else
+        let delimiter = ":"
+    endif
+    let pathlist = split($PATH, delimiter)
+    if isdirectory(a:path) && index(pathlist, a:path) == -1
+        let $PATH=a:path.delimiter.$PATH
+    endif
+endfunction
+"""for pyenv path
+IncludePath(expand("~/.pyenv/shims"))
 
 ""Vim-Plug
 call plug#begin('~/.vim/plugged')
@@ -31,8 +44,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'kannokanno/previm'
     Plug 'tyru/open-browser.vim'
 ""About Python
-    Plug 'davidhalter/jedi-vim',{ 'for':'python'}|Plug 'lambdalisue/vim-pyenv'
+    Plug 'davidhalter/jedi-vim',{ 'for':'python'}
     Plug 'Flake8-vim',{'for':'python'}
+    Plug 'lambdalisue/vim-pyenv',{ 'on': 'jedi-vim' }
 call plug#end()
 
 if has('win32')||('win64')
@@ -52,6 +66,7 @@ set fileencodings=utf-8,cp932
 
 
 ""Directories
+set autochdir
 set backup
 set backupdir=$MY_VIMRUNTIME/vimtemp
 set directory=$MY_VIMRUNTIME/vimtemp
