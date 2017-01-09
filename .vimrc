@@ -44,9 +44,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'kannokanno/previm'
     Plug 'tyru/open-browser.vim'
 ""About Python
-    Plug 'davidhalter/jedi-vim',{ 'for':'python'}
-    Plug 'Flake8-vim',{'for':'python'}
-    Plug 'lambdalisue/vim-pyenv',{ 'on': 'jedi-vim' , 'for':'python'}
+    Plug 'davidhalter/jedi-vim',{ 'for':['python', 'python3']}
+    Plug 'Flake8-vim',{'for':['python', 'python3']}
+    Plug 'lambdalisue/vim-pyenv',{ 'on': 'jedi-vim' , 'for':['python', 'ython3']}
 call plug#end()
 
 if has('win32')||('win64')
