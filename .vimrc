@@ -22,7 +22,9 @@ function! IncludePath(path)
     endif
 endfunction
 """for pyenv path
+if has('mac')
 IncludePath(expand("~/.pyenv/shims"))
+endif
 
 ""Vim-Plug
 call plug#begin('~/.vim/plugged')
@@ -43,6 +45,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'plasticboy/vim-markdown'
     Plug 'kannokanno/previm'
     Plug 'tyru/open-browser.vim'
+    Plug 'ctrlpvim/ctrlp.vim'
 ""About Python
     Plug 'davidhalter/jedi-vim',{ 'for':['python', 'python3']}
     Plug 'Flake8-vim',{'for':['python', 'python3']}
