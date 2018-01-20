@@ -5,6 +5,7 @@ export PATH="${PYENV_ROOT}/bin:$PATH"
 eval "$(pyenv init -)"
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.config/dotfiles/tmux_bin/:$PATH"
 
 # set prompt
 ## \[ ... \] : encloses control sequence with \[ and \] for accurate word wrap
