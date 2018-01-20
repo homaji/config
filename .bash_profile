@@ -6,6 +6,17 @@ eval "$(pyenv init -)"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# set prompt
+## \[ ... \] : encloses control sequence with \[ and \] for accurate word wrap
+## \033[xxm : changes the color of command line
+## \h : the hostname up to the first "."
+## \w : current working directory
+## \n : newline
+## \$ : "$" for non-root, "#" for root
+## カラー説明https://qiita.com/fernet/items/4dcb6f82520d87227121
+export PS1='\[\e[36m\][\h: \w]\[\e[0m\]\n\$'
+
+# set TMUX
 SESSION_NAME=ope
 
 if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
