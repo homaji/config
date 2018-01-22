@@ -13,6 +13,16 @@ Plug 'tyru/eskk.vim'
 
 call plug#end()
 
+"Basic Config
+filetype plugin on
+filetype indent on
+syntax on
+syntax enable
+
+""Encoding
+set encoding=utf-8
+set fileencodings=utf-8,cp932
+
 "Key Config"""
 ""macvimではoption+\がleaderになるので変更
 
