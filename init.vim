@@ -23,6 +23,14 @@ syntax enable
 set encoding=utf-8
 set fileencodings=utf-8,cp932
 
+""Directories
+set autochdir
+set backup
+set backupdir=$XDG_CONFIG_HOME.'/nvim/temp'
+set directory=$XDG_CONFIG_HOME.'/nvim/temp'
+set undodir=$XDG_COFIG_HOME.'/nvim/temp'
+set viminfo+=n$XDG_CONFIG_HOME.'/nvim/temp'
+
 "Key Config"""
 ""macvimではoption+\がleaderになるので変更
 
