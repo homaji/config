@@ -80,3 +80,34 @@ nnoremap sQ :<C-u>bd<CR>
 			 \'encoding': 'euc-jp'
 			 \}
  endif
+
+""lightline""
+set laststatus=2
+let g:lightline = { 
+        \'colorscheme': 'solarized'
+        \,
+        \'active': {
+        \  'left':[ ['mode', 'paste'], ['readonly','modified'],['filename'] ],
+        \  'right':[ ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'] ],
+        \},
+        \'component_function': {
+        \    'mode': 'Mymode',
+        \ },
+         \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" }, 
+        \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
+        \ 'tabline_separator': { 'left': "|", 'right': "|" }, 
+        \ 'tabline_subseparator': { 'left': "|" , 'right': "|" },
+        \ 'tabline':{'right':[['rows'],['cd'],['tabopts']]},
+        \ 'tab': {'active':['prefix','filename']}
+        \}
+
+
+function! Mymode()
+    return  &ft == 'unite' ? 'Unite' :
+          \ &ft == 'vimfiler' ? 'VimFiler' :
+          \ &ft == 'vimshell' ? 'VimShell' :
+          \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+function! MyFilename()
+    return  ' ' ! = expand('%:F') ? expand('%:F') : '[No Name]'
+endfunction
