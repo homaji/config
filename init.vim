@@ -31,6 +31,13 @@ set directory=$XDG_CONFIG_HOME.'/nvim/temp'
 set undodir=$XDG_COFIG_HOME.'/nvim/temp'
 set viminfo+=n$XDG_CONFIG_HOME.'/nvim/temp'
 
+""Use Clipboard
+set clipboard=unnamed,autoselect
+
+""Buffer
+set hidden
+
+
 "Key Config"""
 ""macvimではoption+\がleaderになるので変更
 
