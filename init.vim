@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'Shougo/vimproc'
 Plug 'tyru/eskk.vim'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -26,13 +27,13 @@ set fileencodings=utf-8,cp932
 ""Directories
 set autochdir
 set backup
-set backupdir=$XDG_CONFIG_HOME.'/nvim/temp'
-set directory=$XDG_CONFIG_HOME.'/nvim/temp'
-set undodir=$XDG_COFIG_HOME.'/nvim/temp'
-set viminfo+=n$XDG_CONFIG_HOME.'/nvim/temp'
+set backupdir=$XDG_CONFIG_HOME/nvim/temp
+set directory=$XDG_CONFIG_HOME/nvim/temp
+set undodir=$XDG_COFIG_HOME/nvim/temp
+set viminfo+=n"$XDG_CONFIG_HOME/nvim/temp
 
 ""Use Clipboard
-set clipboard=unnamed,autoselect
+set clipboard=unnamedplus
 
 ""Buffer
 set hidden
