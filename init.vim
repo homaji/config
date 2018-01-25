@@ -11,7 +11,8 @@ Plug 'junegunn/vim-plug'
 Plug 'Shougo/vimproc'
 Plug 'tyru/eskk.vim'
 Plug 'itchyny/lightline.vim'
-    Plug 'thinca/vim-quickrun'
+Plug 'thinca/vim-quickrun'
+Plug 'yuratomo/w3m.vim'
 
 call plug#end()
 
