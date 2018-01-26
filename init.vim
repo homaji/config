@@ -95,10 +95,10 @@ let g:lightline = {
         \'component_function': {
         \    'mode': 'Mymode',
         \ },
-         \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" }, 
-        \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
-        \ 'tabline_separator': { 'left': "|", 'right': "|" }, 
-        \ 'tabline_subseparator': { 'left': "|" , 'right': "|" },
+         \ 'separator': { 'left': "\ue0b4", 'right': "\ue0b6" }, 
+        \ 'subseparator': { 'left': "\ue0b5", 'right': "\ue0b7" },
+        \ 'tabline_separator': { 'left': "\ue0b8", 'right': "\ue0bA" }, 
+        \ 'tabline_subseparator': { 'left': "\ue0b9" , 'right': "\ue0bB" },
         \ 'tabline':{'right':[['rows'],['cd'],['tabopts']]},
         \ 'tab': {'active':['prefix','filename']}
         \}
