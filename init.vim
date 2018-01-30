@@ -101,6 +101,16 @@ nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 
+"Display Setting
+
+""Cursol
+set number
+set cursorline
+
+""number
+set relativenumber
+
+
 "Plugin Settings"
 
 ""eskk
