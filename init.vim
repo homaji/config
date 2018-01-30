@@ -40,6 +40,14 @@ set clipboard=unnamedplus
 ""Buffer
 set hidden
 
+""set Wildmode. Bash like complement
+set wildmode=list:longest
+
+""Search
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
 
 "Key Config"""
 ""macvimではoption+\がleaderになるので変更
