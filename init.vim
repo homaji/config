@@ -187,3 +187,7 @@ endfunction
 function! MyFilename()
     return  ' ' ! = expand('%:F') ? expand('%:F') : '[No Name]'
 endfunction
+
+""quickrun.vim""
+""" 新しいウィンドウを下に開く
+set splitbelow
