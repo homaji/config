@@ -67,7 +67,7 @@ nnoremap <up> gk
 nnoremap Y y$
 
 ""ESC in insert-mode
-inoremap っj <ESC>
+inoremap <silent> jj <ESC>
 
 ""Edit .vimrc""
 "http://whileimautomaton.net/2008/08/vimworkshop3-kana-presentation
