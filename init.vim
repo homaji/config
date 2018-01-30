@@ -62,6 +62,25 @@ nnoremap k gk
 nnoremap <down> gj
 nnoremap <up> gk
 
+""Change yank key. Yank from cursol to line end.
+"http://itchyny.hatenablog.com/entry/2014/12/25/090000
+nnoremap Y y$
+
+""ESC in insert-mode
+inoremap っj <ESC>
+
+""Edit .vimrc""
+"http://whileimautomaton.net/2008/08/vimworkshop3-kana-presentation
+nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
+""Reload .vimrc""
+nnoremap <Space>s. :<C-u>source $MYVIMRC<CR>
+
+""No hlsearch with ESC-ESC
+nnoremap <ESC><ESC> :<C-u>set nohlsearch!<CR>
+
+""Toggle relativenumber
+nnoremap <F2> :<C-u>setlocal relativenumber!<CR>
+
 ""move to other Windows
 ""http://qiita.com/tekkoc/items/98adcadfa4bdc8b5a6ca
 nnoremap s <Nop>
