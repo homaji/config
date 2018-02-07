@@ -9,6 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'junegunn/vim-plug'
 Plug 'Shougo/vimproc'
+Plug 'Shougo/denite.nvim'
 Plug 'tyru/eskk.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'thinca/vim-quickrun'
