@@ -169,12 +169,13 @@ let g:lightline = {
         \},
         \'component_function': {
         \    'mode': 'Mymode',
+        \    'bufnum': 'Mybufnum' 
         \ },
          \ 'separator': { 'left': "\ue0b4", 'right': "\ue0b6" }, 
         \ 'subseparator': { 'left': "\ue0b5", 'right': "\ue0b7" },
         \ 'tabline_separator': { 'left': "\ue0b8", 'right': "\ue0bA" }, 
         \ 'tabline_subseparator': { 'left': "\ue0b9" , 'right': "\ue0bB" },
-        \ 'tabline':{'right':[['rows'],['cd'],['tabopts']]},
+        \ 'tabline':{'right':[['bufnum']]},
         \ 'tab': {'active':['prefix','filename']}
         \}
 
@@ -188,6 +189,11 @@ endfunction
 function! MyFilename()
     return  ' ' ! = expand('%:F') ? expand('%:F') : '[No Name]'
 endfunction
+
+function! Mybufnum()
+        return bufnr('$')
+endfunction
+
 
 ""quickrun.vim""
 """ 新しいウィンドウを下に開く
