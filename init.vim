@@ -111,6 +111,9 @@ set cursorline
 ""number
 set relativenumber
 
+""Background
+set background=dark
+
 ""Show Invisible Characters""
 """http://qiita.com/X___MOON___X/items/26d3f292537bad197f64
 map <silent> <F3> :set list!<CR>
@@ -169,13 +172,15 @@ let g:lightline = {
         \},
         \'component_function': {
         \    'mode': 'Mymode',
-        \    'bufnum': 'Mybufnum' 
+        \    'bufnum': 'Mybufnum',
+        \    'winnum': 'Mywinnum',
+        \    'tabnum': 'Mytabnum', 
         \ },
          \ 'separator': { 'left': "\ue0b4", 'right': "\ue0b6" }, 
         \ 'subseparator': { 'left': "\ue0b5", 'right': "\ue0b7" },
         \ 'tabline_separator': { 'left': "\ue0b8", 'right': "\ue0bA" }, 
         \ 'tabline_subseparator': { 'left': "\ue0b9" , 'right': "\ue0bB" },
-        \ 'tabline':{'right':[['bufnum']]},
+        \ 'tabline':{'right':[['winnum'],['tabnum'],['bufnum']]},
         \ 'tab': {'active':['prefix','filename']}
         \}
 
@@ -191,7 +196,18 @@ function! MyFilename()
 endfunction
 
 function! Mybufnum()
-        return bufnr('$')
+        let str = "B" . bufnr('%') . "/" . bufnr('$')
+        return str
+endfunction
+
+function! Mytabnum()
+        let str = "T" . tabpagenr( ) . "/" . tabpagenr('$')
+        return str
+endfunction
+
+function! Mywinnum()
+        let str = "W" . winnr( ) . "/" . winnr('$')
+        return str
 endfunction
 
 
