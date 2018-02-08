@@ -63,6 +63,10 @@ nnoremap k gk
 nnoremap <down> gj
 nnoremap <up> gk
 
+nnoremap <Space>h ^
+nnoremap <Space>l $
+nnoremap <Space>m %
+
 ""Change yank key. Yank from cursol to line end.
 "http://itchyny.hatenablog.com/entry/2014/12/25/090000
 nnoremap Y y$
