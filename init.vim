@@ -57,6 +57,10 @@ set hlsearch
 
 let g:mapleader = ','
 
+""Change ¥ to BackSlash
+noremap! ¥ \
+noremap! \ ¥
+
 ""Cursol move
 set whichwrap=b,s,h,l,<,>,[,],~
 
@@ -220,3 +224,10 @@ endfunction
 ""quickrun.vim""
 """ 新しいウィンドウを下に開く
 set splitbelow
+
+""Deoplete.nvim""
+let g:deoplete#enable_at_startup = 1
+"""<TAB>: completion
+"inoremap <silent><expr> <TAB>
+
+
