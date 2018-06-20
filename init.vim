@@ -3,6 +3,7 @@
 let $XDG_CONFIG_HOME=$HOME.'/.config'
 let $VIM_PLUG = $XDG_CONFIG_HOME.'/nvim/plugged'
 set rtp^=$XDG_CONFIG_HOME,$VIM_PLUG
+let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
 
 ""Vim-Plug
 call plug#begin('~/.config/nvim/plugged')
@@ -227,7 +228,17 @@ set splitbelow
 
 ""Deoplete.nvim""
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 0
+let g:deoplete#auto_complete_start_length = 1
+let g:deoplete#enable_camel_case = 0
+"let g:deoplete#sources#jedi#python_path = ~/.pyenv/shims/python3 
 """<TAB>: completion
-"inoremap <silent><expr> <TAB>
-
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ deoplete#manual_complete()
+function! s:check_back_space() abort "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~ '\S'
+endfunction"}}}
 
