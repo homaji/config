@@ -246,9 +246,9 @@ endfunction"}}}
 ""ALE""
 """ mark on error line"""
 "using Cica font 0xf467
-let g:ale_sign_error = ''
- "using Cica font 0xf46e
-let g:ale_sign_warning =''
+let g:ale_sign_error = ' '
+"using Cica font 0xf46e k
+let g:ale_sign_warning =' '
 
 """ message format fot error lines
 let g:ale_echo_msg_format = '[%linter%] %s {%severity%}'
