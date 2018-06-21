@@ -17,6 +17,7 @@ Plug 'tyru/eskk.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'yuratomo/w3m.vim'
+Plug 'w0rp/ale' "lint 文法チェック
 
 call plug#end()
 
@@ -242,3 +243,37 @@ function! s:check_back_space() abort "{{{
     return !col || getline('.')[col - 1] =~ '\S'
 endfunction"}}}
 
+""ALE""
+""" mark on error line"""
+"using Cica font 0xf467
+let g:ale_sign_error = ''
+ "using Cica font 0xf46e
+let g:ale_sign_warning =''
+
+""" message format fot error lines
+let g:ale_echo_msg_format = '[%linter%] %s {%severity%}'
+""" always ON error
+let g:ale_sign_column_always = 1
+
+""" excute lint when file openning
+let g:ale_lint_on_enter = 1
+""" excute lint when file saving
+let g:ale_lint_on_save = 1
+
+""" Don't use QuickFix
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 0
+let g:ale_open_list = 0
+let g:ale_keep_list_window_open = 0
+
+""" filetype for lint
+let g:ale_linters = {
+            \   'python': ['flake8'],
+            \}
+""" keymapping for lint
+nmap [ale] <Nop>
+map <C-k> [ale]
+
+"""" jump to error line
+nmap <silent> [ale]<C-P> <Plug>(ale_previous)
+nmap <silent> [ale]<C-N> <Plug>(ale_next)
