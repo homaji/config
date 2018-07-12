@@ -3,7 +3,7 @@
 let $XDG_CONFIG_HOME=$HOME.'/.config'
 let $VIM_PLUG = $XDG_CONFIG_HOME.'/nvim/plugged'
 set rtp^=$XDG_CONFIG_HOME,$VIM_PLUG
-let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 ""Vim-Plug
 call plug#begin('~/.config/nvim/plugged')
