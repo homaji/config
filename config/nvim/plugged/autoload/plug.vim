@@ -1,0 +1,1 @@
+/Users/homaji/.dotfiles/config//nvim/plugged/autoload/plug.vim
