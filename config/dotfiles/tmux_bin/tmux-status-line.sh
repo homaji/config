@@ -1,1 +1,0 @@
-/Users/homaji/.dotfiles/config//dotfiles/tmux_bin/tmux-status-line.sh
