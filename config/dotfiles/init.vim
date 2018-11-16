@@ -1,1 +1,0 @@
-/Users/homaji/.dotfiles/config//dotfiles/init.vim
