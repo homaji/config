@@ -3,7 +3,7 @@ echo "~/.bash_profile loaded"
 #export PYENV_ROOT="${HOME}/.pyenv/"
 #export PATH="${PYENV_ROOT}/bin:$PATH"
 #eval "$(pyenv init -)"
-export XDG_CONFIG_HOME="${HOME}/data/dotfiles/"
+export XDG_CONFIG_HOME="${HOME}/.config/"
 
 #export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$XDG_CONFIG_HOME/tmux_bin/:$PATH"
