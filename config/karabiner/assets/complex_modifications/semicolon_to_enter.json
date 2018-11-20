@@ -1,1 +1,42 @@
-/Users/homaji/.dotfiles/config//karabiner/assets/complex_modifications/semicolon_to_enter.json
+{
+  "title": "セミコロンをEnterにする",
+  "rules": [
+    {
+      "description": "セミコロンをEnterにし、Shift+セミコロンの挙動は変えず、右commandはセミコロンにしておく",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": ["shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "semicolon",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter"
+            }
+          ]
+        }
+    ]
+    }
+  ]
+}
+
