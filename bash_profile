@@ -20,15 +20,17 @@ export PATH="$XDG_CONFIG_HOME/tmux_bin/:$PATH"
 ## カラー説明https://qiita.com/fernet/items/4dcb6f82520d87227121
 export PS1='\[\e[36m\][\h: \w]\[\e[0m\]\n\$'
 
-# set TMUX
-# SESSION_NAME=ope
-# 
-# if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
-# 	option=""
-# 	if tmux has-session -t ${SESSION_NAME}; then
-# 		option="attach -t ${SESSION_NAME}"
-# 	else
-# 		option="new -s ${SESSION_NAME}"
-# 	fi
-# 	tmux $option && exit
-# fi
+set TMUX
+if [ "$TERM_PROGRAM" = "alacritty" ]; then
+ SESSION_NAME=ope
+ 
+ if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
+ 	option=""
+ 	if tmux has-session -t ${SESSION_NAME}; then
+ 		option="attach -t ${SESSION_NAME}"
+ 	else
+ 		option="new -s ${SESSION_NAME}"
+ 	fi
+ 	tmux $option && exit
+ fi
+fi
