@@ -1,42 +1,28 @@
 {
-  "title": "セミコロンをEnterにする",
-  "rules": [
-    {
-      "description": "セミコロンをEnterにし、Shift+セミコロンの挙動は変えず、右commandはセミコロンにしておく",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "semicolon",
-            "modifiers": {
-              "mandatory": ["shift"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "semicolon",
-              "modifiers": [
-                "left_shift"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "semicolon",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "return_or_enter"
-            }
-          ]
-        }
-    ]
-    }
-  ]
+	"title": "Change Semicolon to Enter",
+	"rules": [
+		{
+			"description": "Change Semicolon to Enter",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": { 
+						"key_code": "semicolon"
+					},
+					"to": [
+						{ 
+							"key_code": "return_or_enter"
+						}
+					],
+					"conditions": [
+						{ 
+							"type": "variable_if", 
+							"name": "eisuu", 
+							"value": 0
+						}
+					]
+				}
+			]
+		}
+	]
 }
-
