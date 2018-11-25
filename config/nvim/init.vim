@@ -164,12 +164,12 @@ set smartindent
  if has('vim_starting')
  let g:eskk#directory= '~/.config/nvim/eskk/'
  let g:eskk#dictionary= {
-			 \'path': '~/.config/nvim/eskk/USER.L',
+			 \'path': '~/.config/nvim/eskk/skk-jisyo.utf8',
 			 \'encoding': 'utf-8'
 			 \}
  let g:eskk#large_dictionary = {
 			 \'path': '~/.config/nvim/eskk/SKK-JISYO.L',
-			 \'encoding': 'euc-jp'
+			 \'encoding': 'utf-8'
 			 \}
  endif
 
