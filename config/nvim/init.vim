@@ -169,7 +169,7 @@ set smartindent
 			 \}
  let g:eskk#large_dictionary = {
 			 \'path': '~/.config/nvim/eskk/SKK-JISYO.L',
-			 \'encoding': 'utf-8'
+			 \'encoding': 'EUC-JP'
 			 \}
  endif
 
