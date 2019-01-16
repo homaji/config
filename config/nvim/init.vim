@@ -157,7 +157,16 @@ set shiftwidth=4
 set expandtab
 set smartindent
 
+"FileType Settings"
 
+""python-LSP
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd' : {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
 
 "Plugin Settings"
 
