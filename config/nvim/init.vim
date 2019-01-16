@@ -11,13 +11,15 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'Shougo/vimproc'
 Plug 'Shougo/denite.nvim'
-Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-jedi'
 Plug 'tyru/eskk.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'yuratomo/w3m.vim'
-Plug 'w0rp/ale' "lint 文法チェック
+Plug 'vim-jp/vimdoc-ja'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 call plug#end()
 
