@@ -10,6 +10,9 @@ export XDG_CONFIG_HOME="${HOME}/.config/"
 #export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$XDG_CONFIG_HOME/tmux_bin/:$PATH"
 
+# set env for JUPYTER_NOTEBOOK
+export JUPYTER_NOTEBOOK_ROOT="$HOME/data/dev/python/"
+
 # set prompt
 ## \[ ... \] : encloses control sequence with \[ and \] for accurate word wrap
 ## \033[xxm : changes the color of command line
