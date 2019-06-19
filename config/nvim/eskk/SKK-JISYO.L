@@ -1,1 +1,0 @@
-/Users/homaji/Library/Application Support/AquaSKK/SKK-JISYO.L
