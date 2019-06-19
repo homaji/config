@@ -8,6 +8,12 @@ end
   let $VIMPLUG= $MY_VIMRUNTIME . '/plugged'
   set rtp^=$MY_VIMRUNTIME,$VIMPLUG
 
+""Create Directory
+if !isdirectory($MY_VIMRUNTIME . '/vimtemp')
+    call mkdir($MY_VIMRUNTIME . '/vimtemp', 'p')
+endif
+
+
 ""for Pyrhon Path
 function! IncludePath(path)
     "define delimiter depends on platform
@@ -22,11 +28,17 @@ function! IncludePath(path)
     endif
 endfunction
 """for pyenv path
-if has('mac')
-IncludePath(expand("~/.pyenv/shims"))
-endif
+"if has('mac')
+"IncludePath(expand("~/.pyenv/shims"))
+"endif
 
 ""Vim-Plug
+if empty(glob('$MY_VIMRUNTIME/autoload/plug.vim'))
+    silent !curl -fLo $MY_VIMRUNTIME/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
     Plug 'junegunn/vim-plug'
     Plug 'Shougo/unite.vim'
@@ -40,16 +52,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'rhysd/clever-f.vim'
     Plug 'scrooloose/syntastic'
     Plug 'altercation/vim-colors-solarized'
-    Plug 'tyru/eskk.vim'
-    Plug 'maralla/completor.vim'
     Plug 'plasticboy/vim-markdown'
     Plug 'kannokanno/previm'
     Plug 'tyru/open-browser.vim'
     Plug 'ctrlpvim/ctrlp.vim'
-""About Python
-    Plug 'davidhalter/jedi-vim',{ 'for':['python', 'python3']}
-    Plug 'Flake8-vim',{'for':['python', 'python3']}
-    Plug 'lambdalisue/vim-pyenv',{ 'on': 'jedi-vim' , 'for':['python', 'ython3']}
 call plug#end()
 
 if has('win32')||('win64')
