@@ -6,6 +6,12 @@ set rtp^=$XDG_CONFIG_HOME,$VIM_PLUG
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 ""Vim-Plug
+if empty(glob('$XDG_CONFIG_HOME/autoload/plug.vim'))
+    silent !curl -fLo $XDG_CONFIG_HOME/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'junegunn/vim-plug'
@@ -20,6 +26,7 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'tpope/vim-dadbod'
 
 call plug#end()
 
@@ -238,6 +245,12 @@ endfunction
 ""quickrun.vim""
 """ 新しいウィンドウを下に開く
 set splitbelow
+""" pythonのときはpython3を使う
+let g:quickrun_config = {
+    \ 'python': {
+        \'command':'python3',
+    \}
+    \}
 
 
 ""ALE""
