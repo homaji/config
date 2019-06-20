@@ -253,12 +253,15 @@ let g:lightline = {
         \},
         \'component_function': {
         \    'mode': 'Mymode',
+        \    'bufnum': 'Mybufnum',
+        \    'winnum': 'Mywinnum',
+        \    'tabnum': 'Mytabnum', 
         \ },
          \ 'separator': { 'left': "\ue0b8", 'right': "\ue0ba" }, 
         \ 'subseparator': { 'left': "\ue0b9", 'right': "\ue0bb" },
         \ 'tabline_separator': { 'left': "\ue0bc", 'right': "\ue0be" }, 
         \ 'tabline_subseparator': { 'left': "\ue0bd" , 'right': "\ue0bf" },
-        \ 'tabline':{'right':[['rows'],['cd'],['tabopts']]},
+        \ 'tabline':{'right':[['winnum'],['tabnum'],['bufnum']]},
         \ 'tab': {'active':['prefix','filename']}
         \}
 
@@ -273,6 +276,20 @@ function! MyFilename()
     return  ' ' ! = expand('%:F') ? expand('%:F') : '[No Name]'
 endfunction
 
+function! Mybufnum()
+        let str = "B" . bufnr('%') . "/" . bufnr('$')
+        return str
+endfunction
+
+function! Mytabnum()
+        let str = "T" . tabpagenr( ) . "/" . tabpagenr('$')
+        return str
+endfunction
+
+function! Mywinnum()
+        let str = "W" . winnr( ) . "/" . winnr('$')
+        return str
+endfunction
 ""Changelog""
 let g:changelog_username = "homaji"
 let g:changelog_timeformat = "%Y-%m-%d"
