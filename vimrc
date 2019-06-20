@@ -56,6 +56,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'kannokanno/previm'
     Plug 'tyru/open-browser.vim'
     Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'junegunn/goyo.vim'
 call plug#end()
 
 if has('win32')||('win64')
