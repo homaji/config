@@ -178,11 +178,12 @@ set background=light
 
 ""FontRicty for Powerline BoldForPowerline
 if has('win32')||('win64')
-    set guifont=Ricty_For_Powerline:h12:b
-    set guifontwide=Ricty_For_Powerline:h12:b
+    set guifont=Cica:h12:b
+    set guifontwide=Cica:h12:b
 elseif has('mac')||('unix')
-    set guifont=Ricty:h18
-    set guifontwide=Ricty:h18
+    set guifont=Cica:h18
+    set guifontwide=Cica:h18
+    set ambiwidth=double
 endif
 ""Show Invisible Characters""
 "http://qiita.com/X___MOON___X/items/26d3f292537bad197f64
@@ -253,10 +254,10 @@ let g:lightline = {
         \'component_function': {
         \    'mode': 'Mymode',
         \ },
-         \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" }, 
-        \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
-        \ 'tabline_separator': { 'left': "|", 'right': "|" }, 
-        \ 'tabline_subseparator': { 'left': "|" , 'right': "|" },
+         \ 'separator': { 'left': "\ue0b8", 'right': "\ue0ba" }, 
+        \ 'subseparator': { 'left': "\ue0b9", 'right': "\ue0bb" },
+        \ 'tabline_separator': { 'left': "\ue0bc", 'right': "\ue0be" }, 
+        \ 'tabline_subseparator': { 'left': "\ue0bd" , 'right': "\ue0bf" },
         \ 'tabline':{'right':[['rows'],['cd'],['tabopts']]},
         \ 'tab': {'active':['prefix','filename']}
         \}
