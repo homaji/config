@@ -1,3 +1,0 @@
-/home/homaj/dotfiles/config/vim/vimrc
-/home/homaj/.bash_profile
-/home/homaj/dotfiles/gvimrc
