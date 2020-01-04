@@ -1,10 +1,13 @@
 echo "~/.bash_profile loaded"
 
 export LANG="ja_JP.UTF-8"
-export HISTFILE="$HOME/temp/bash_history"
+export HISTFILE="$HOME"temp/bash_history
+export XDG_CONFIG_HOME="$HOME"dotfiles/config
+export XDG_CACHE_HOME="$HOME".cache
+export XDG_DATA_HOME="$HOME".local/share
 
-export PATH="$XDG_CONFIG_HOME/tmux_bin/:$PATH"
-export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
+export PATH=$XDG_CONFIG_HOME/tmux_bin/:$PATH
+export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
 
 # set env for JUPYTER_NOTEBOOK
 export JUPYTER_NOTEBOOK_ROOT="${HOME}/data/dev/python/"
