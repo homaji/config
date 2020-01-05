@@ -1,12 +1,9 @@
 
 ""runtimepath
-"if has('win32')||('win64')
   let $MY_VIMRUNTIME = $HOME.'.vim'
-"elseif has('mac')||has('unix')
-"  let $MY_VIMRUNTIME = $HOME.'/.vim'
-"end
   let $VIMPLUG= $MY_VIMRUNTIME . '/plugged'
-  set rtp^=$MY_VIMRUNTIME,$VIMPLUG
+  " ^= にすることで、検索ディレクトリを前に追加
+  set runtimepath^=$MY_VIMRUNTIME,$VIMPLUG
 
 ""Create Directory
 if !isdirectory($MY_VIMRUNTIME . '/vimtemp')
