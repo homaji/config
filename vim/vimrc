@@ -1,9 +1,10 @@
 
 ""runtimepath
-  let $MY_VIMRUNTIME = $HOME.'.vim'
-  let $VIMPLUG= $MY_VIMRUNTIME . '/plugged'
+  let $MY_VIMRUNTIME = $HOME . '.vim'
+  let $VIMPLUG= $MY_VIMRUNTIME . 'plugged'
+  let $VIMCONFIG = $XDG_CONFIG_HOME . '/vim'
   " ^= にすることで、検索ディレクトリを前に追加
-  set runtimepath^=$MY_VIMRUNTIME,$VIMPLUG
+  set runtimepath^=$MY_VIMRUNTIME,$VIMPLUG,$VIMCONFIG
 
 ""Create Directory
 if !isdirectory($MY_VIMRUNTIME . '/vimtemp')
@@ -61,7 +62,8 @@ call plug#end()
 if has('win32')||('win64')
     let g:vimproc#download_windows_dll =1
 endif
-
+" https://mattn.kaoriya.net/software/vim/20191231001537.htm
+call map(sort(split(globpath(&runtimepath, '/init/*.vim'))), {->[execute('exec "so" v:val')]})
 
 """Basic Config"""
 filetype plugin on 
@@ -104,60 +106,11 @@ set hlsearch
 let g:mapleader = ','
 "map \ <leader>
 
-""Cursol move
-set whichwrap=b,s,h,l,<,>,[,],~
-
-nnoremap j gj
-nnoremap k gk
-nnoremap <down> gj
-nnoremap <up> gk
-
-""move to other Windows
-"http://qiita.com/tekkoc/items/98adcadfa4bdc8b5a6ca
-nnoremap s <Nop>
-"s+hjkl move to window
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
-nnoremap sh <C-w>h
-"s+nptT move to tab
-nnoremap sn gt
-nnoremap sp gT
-nnoremap st :<C-u>tabnew<CR>
-nnoremap sT :<C-u>Unite tab<CR>
-"s+sv split window
-nnoremap ss :<C-u>sp<CR>
-nnoremap sv :<C-u>vs<CR>
 "s+bB use Unite buffers
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 nnoremap sf :<C-u>Unite file_mru<CR>
 nnoremap sg :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-"s+qQ kill buffer or window
-nnoremap sq :<C-u>q<CR>
-nnoremap sQ :<C-u>bd<CR>
-"s+e Open netrw
-nnoremap se :<C-u>Vexplore<CR>
-
-""Change yank key. Yank from cursol to line end.
-"http://itchyny.hatenablog.com/entry/2014/12/25/090000
-nnoremap Y y$
-
-""ESC in insert-mode
-inoremap jj <ESC>
-
-""Edit .vimrc""
-"http://whileimautomaton.net/2008/08/vimworkshop3-kana-presentation
-nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
-""Reload .vimrc""
-nnoremap <Space>s. :<C-u>source $MYVIMRC<CR>
-
-""No hlsearch with ESC-ESC
-nnoremap <ESC><ESC> :<C-u>set nohlsearch!<CR>
-
-""Toggle relativenumber
-nnoremap <F2> :<C-u>setlocal relativenumber!<CR>
-
 """Display Setting
 
 "Cursol
