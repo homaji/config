@@ -5,6 +5,9 @@ export HISTFILE="$HOME"temp/bash_history
 export XDG_CONFIG_HOME="$HOME"config
 export XDG_CACHE_HOME="$HOME".cache
 export XDG_DATA_HOME="$HOME".local/share
+mkdir -p "$HOME"temp
+mkdir -p "$HOME".cache
+mkdir -p "$HOME".local/share
 
 export PATH=$XDG_CONFIG_HOME/tmux_bin/:$PATH
 export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
