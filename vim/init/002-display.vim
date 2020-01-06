@@ -16,7 +16,7 @@ augroup END
 execute 'colorscheme' scheme
 set background=dark
 
-""FontRicty for Powerline BoldForPowerline
+""Font Cica 
 if has('win32')||('win64')
     set guifont=Cica:h12:b
     set guifontwide=Cica:h12:b
