@@ -25,10 +25,6 @@ function! IncludePath(path)
         let $PATH=a:path.delimiter.$PATH
     endif
 endfunction
-"""for pyenv path
-"if has('mac')
-"IncludePath(expand("~/.pyenv/shims"))
-"endif
 
 ""Vim-Plug
 if empty(glob('$MY_VIMRUNTIME/autoload/plug.vim'))
@@ -64,40 +60,6 @@ if has('win32')||('win64')
 endif
 " https://mattn.kaoriya.net/software/vim/20191231001537.htm
 call map(sort(split(globpath(&runtimepath, '/init/*.vim'))), {->[execute('exec "so" v:val')]})
-
-"""Basic Config"""
-filetype plugin on 
-filetype indent on 
-syntax on
-syntax enable
-
-""Encoding
-set encoding=utf-8
-set fileencodings=utf-8,cp932
-
-
-""Directories
-set autochdir
-set backup
-set backupdir=$MY_VIMRUNTIME/vimtemp
-set directory=$MY_VIMRUNTIME/vimtemp
-set undodir=$MY_VIMRUNTIME/vimtemp
-set viminfo+=n$MY_VIMRUNTIME/viminfo.txt
-
-""Use Clipboard"
-set clipboard=unnamed,autoselect
-
-""Buffer
-set hidden
-
-""set Wildmode. Bash like complement
-set wildmode=list:longest
-
-""Search
-set incsearch
-set ignorecase
-set smartcase
-set hlsearch
 
 """Key Config"""
 
