@@ -5,16 +5,22 @@ set number
 set cursorline
 
 "number
-set relativenumber
+"set relativenumber
 
 ""ColorScheme
 let scheme = 'iceberg'
-augroup guicolorscheme
-    autocmd!
-    execute 'autocmd GUIEnter * colorscheme' scheme
-augroup END
-execute 'colorscheme' scheme
+"augroup guicolorscheme
+"    autocmd!
+"    execute 'autocmd GUIEnter * colorscheme' scheme
+"augroup END
+"execute 'colorscheme' scheme
 set background=dark
+autocmd ColorScheme * highlight NormalNC guifg=#5833D guibg=#121212
+autocmd WinEnter,BufEnter * set wincolor=
+autocmd WinLeave * set wincolor=NormalNC
+
+au WinLeave * set nocursorline 
+au WinEnter * set cursorline 
 
 ""Font Cica 
 if has('win32')||('win64')
