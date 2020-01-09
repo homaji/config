@@ -53,6 +53,14 @@ call plug#begin('~/.vim/plugged')
     Plug 'tyru/open-browser.vim'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'junegunn/goyo.vim'
+    Plug 'prabirshrestha/async.vim'
+    Plug 'prabirshrestha/asyncomplete.vim'
+    Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'mattn/vim-lsp-settings'
+    Plug 'mattn/vim-lsp-icons'
+    Plug 'hrsh7th/vim-vsnip'
+    Plug 'hrsh7th/vim-vsnip-integ'
 call plug#end()
 
 if has('win32')||('win64')
