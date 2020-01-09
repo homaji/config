@@ -8,17 +8,17 @@ set cursorline
 "set relativenumber
 
 ""ColorScheme
-let scheme = 'iceberg'
+"let scheme = 'iceberg'
 "augroup guicolorscheme
 "    autocmd!
 "    execute 'autocmd GUIEnter * colorscheme' scheme
 "augroup END
 "execute 'colorscheme' scheme
-set background=dark
-autocmd ColorScheme * highlight NormalNC guifg=#5833D guibg=#121212
-autocmd WinEnter,BufEnter * set wincolor=
-autocmd WinLeave * set wincolor=NormalNC
-
+"set background=dark
+"autocmd ColorScheme * highlight NormalNC ctermfg=#5833D ctermbg=brown
+"autocmd WinEnter,BufEnter * set wincolor=
+"autocmd WinLeave * set wincolor=NormalNC
+"highlight Normal ctermfg=145 ctermbg=none guifg=#ABB2BF guibg=none
 au WinLeave * set nocursorline 
 au WinEnter * set cursorline 
 
