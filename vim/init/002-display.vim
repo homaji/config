@@ -12,22 +12,8 @@ set cursorline
 let scheme = 'solarized'
 set background=dark
 
-highlight Normal ctermbg=NONE guibg=NONE
-highlight NonText ctermbg=NONE guibg=NONE
-highlight SpecialKey ctermbg=NONE guibg=NONE
-highlight EndOfBuffer ctermbg=NONE guibg=NONE
-
-"augroup guicolorscheme
-"    autocmd!
-"    execute 'autocmd GUIEnter * colorscheme' scheme
-"augroup END
-"execute 'colorscheme' scheme
-"autocmd ColorScheme * highlight NormalNC ctermfg=#5833D ctermbg=brown
-"autocmd WinEnter,BufEnter * set wincolor=
-"autocmd WinLeave * set wincolor=NormalNC
-"highlight Normal ctermfg=145 ctermbg=none guifg=#ABB2BF guibg=none
-au WinLeave * set nocursorline 
-au WinEnter * set cursorline 
+autocmd  WinLeave * set nocursorline 
+autocmd  WinEnter * set cursorline 
 
 ""Font Cica 
 if has('win32')||('win64')

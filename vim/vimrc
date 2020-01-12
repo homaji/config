@@ -53,6 +53,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'tyru/open-browser.vim'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'junegunn/goyo.vim'
+    Plug 'TaDaa/vimade'
+    " For lsp
     Plug 'prabirshrestha/async.vim'
     Plug 'prabirshrestha/asyncomplete.vim'
     Plug 'prabirshrestha/asyncomplete-lsp.vim'
