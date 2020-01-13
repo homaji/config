@@ -11,6 +11,7 @@ mkdir -p "$HOME".local/share
 
 export PATH=$XDG_CONFIG_HOME/tmux_bin/:$PATH
 export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
+export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 
 # Vi mode
 set -o vi
@@ -20,13 +21,20 @@ export JUPYTER_NOTEBOOK_ROOT="${HOME}/data/dev/python/"
 
 # set prompt
 ## \[ ... \] : encloses control sequence with \[ and \] for accurate word wrap
-## \033[xxm : changes the color of command line
+## \033 : Escape seaquence.
+## [xxm : change the color of command line
 ## \h : the hostname up to the first "."
 ## \w : current working directory
 ## \n : newline
 ## \$ : "$" for non-root, "#" for root
 ## カラー説明https://qiita.com/fernet/items/4dcb6f82520d87227121
-export PS1='\[\e[36m\][\h: \w]\[\e[0m\]\n\$'
+#export PS1='\[\e[36m\][\h: \w]\[\e[0m\]\n\$'
+function prompt {
+    PS1='> '
+    echo -e "\e[36m[$HOSTNAME:$PWD]\e[m"
+}
+
+PROMPT_COMMAND='prompt'
 
 set TMUX
 if [ "$TERM_PROGRAM" = "alacritty" ]; then
