@@ -12,6 +12,9 @@ mkdir -p "$HOME".local/share
 export PATH=$XDG_CONFIG_HOME/tmux_bin/:$PATH
 export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
 
+# Vi mode
+set -o vi
+
 # set env for JUPYTER_NOTEBOOK
 export JUPYTER_NOTEBOOK_ROOT="${HOME}/data/dev/python/"
 
