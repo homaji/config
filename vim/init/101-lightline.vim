@@ -1,3 +1,4 @@
+set ambiwidth=double
 if empty(globpath(&rtp, 'autoload/lightline.vim'))
     finish
 endif
