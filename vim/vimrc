@@ -1,4 +1,5 @@
 
+set shellslash
 ""runtimepath
   let $MY_VIMRUNTIME = $HOME . '.vim'
   let $VIMPLUG= $MY_VIMRUNTIME . 'plugged'
