@@ -1,0 +1,66 @@
+include "109.nodoka"   #デフォルトの109キーボード設定
+
+keymap Global
+#キー入れ替え
+#スペースをﾜﾝｼｮｯﾄﾓﾃﾞｨﾌｧｲﾔのShiftに変更
+mod Shift += !!Space
+#スペースを長押ししてキャンセルする場合にスペースを入力しない。
+key R-*Space = &Ignore
+#Ctrl+h でバックスペース
+key C-H = BackSpace
+
+#無変換キーをモディファイヤーキーに
+mod Mod0 = !!無変換
+
+#無変換キーを併用したvi風移動
+key M0-*J = *↓
+key M0-*H = *←
+key M0-*K = *↑
+key M0-*L = *→
+
+#セミコロンをエンターに
+key *IC-SemiColon = Enter
+#無変換と同時でセミコロンに
+key *IC-M0-SemiColon = SemiColon
+#無変換とエンターでCTRL+Enterに
+key M0-Enter = C-Enter U-LControl
+
+#変換キーをモディファイヤーに
+mod Mod3 += !!変換
+
+#変換キーによる各機能
+key M3-E = Esc
+key M3-T = Tab
+key M3-Z = C-Z
+key M3-X = C-X
+key M3-C = C-C
+key M3-V = W-V
+key M3-A = C-A
+key M3-S = C-S
+key M3-W = C-W
+key M3-R = W-R
+key M3-Q = C-Q
+key *IC-M3-D = BackSpace
+key *IC-M3-G = C-G
+
+#数字＋変換、無変換でファンクションキーにする
+key M0-_1 = F1
+key M0-_2 = F2
+key M0-_3 = F3
+key M0-_4 = F4
+key M0-_5 = F5
+key M0-_6 = F6
+key M0-_7 = F7
+key M0-_8 = F8
+key M0-_9 = F9
+
+key M3-_1 = F1
+key M3-_2 = F2
+key M3-_3 = F3
+key M3-_4 = F4
+key M3-_5 = F5
+key M3-_6 = F6
+key M3-_7 = F7
+key M3-_8 = F8
+key M3-_9 = F9
+
