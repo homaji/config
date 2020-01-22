@@ -30,8 +30,10 @@ export JUPYTER_NOTEBOOK_ROOT="${HOME}/data/dev/python/"
 ## カラー説明https://qiita.com/fernet/items/4dcb6f82520d87227121
 #export PS1='\[\e[36m\][\h: \w]\[\e[0m\]\n\$'
 function prompt {
+    local BLUE='\e[36m'
+    local WHITE='\e[m'
     PS1='> '
-    echo -e "\e[36m[$HOSTNAME:$PWD]\e[m"
+    echo -e "$BLUE[$HOSTNAME:$PWD]$WHITE"
 }
 
 PROMPT_COMMAND='prompt'
