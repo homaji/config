@@ -3,11 +3,13 @@ echo "~/.bash_profile loaded"
 export LANG="ja_JP.UTF-8"
 export HISTFILE="$HOME"temp/bash_history
 export XDG_CONFIG_HOME="$HOME"config
-export XDG_CACHE_HOME="$HOME".cache
-export XDG_DATA_HOME="$HOME".local/share
+export XDG_CACHE_HOME="$HOME"temp/cache
+export XDG_DATA_HOME="$HOME"temp/local/share
+export TMP_TMUX="$HOME"temp/tmux
 mkdir -p "$HOME"temp
-mkdir -p "$HOME".cache
-mkdir -p "$HOME".local/share
+mkdir -p "$HOME"temp/cache
+mkdir -p "$HOME"temp/local/share
+mkdir -p "$HOME"temp/tmux
 
 export PATH=$XDG_CONFIG_HOME/tmux_bin/:$PATH
 export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
