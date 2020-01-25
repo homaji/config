@@ -2,7 +2,7 @@ BoldAsFont=yes
 Font=Cica
 AllowBlinking=yes
 
-Transparency=medium
+Transparency=high
 OpaqueWhenFocused=no
 CursorType=block
 FontHeight=12
@@ -14,3 +14,4 @@ BellType=0
 BellTaskbar=no
 BellPopup=yes
 BellFlash=no
+ThemeFile=dracula
